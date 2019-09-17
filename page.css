@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(39, 39, 107);
+}
+.banner {
+  overflow: hidden;
+  background-color: white;
+  border-bottom: gold solid 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.banner a {
+  float: left;
+  color: rgb(37, 74, 153);
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.a left {
+  float: center;
+}
+.banner a:hover {
+  background-color: rgb(226, 232, 247);
+   color: rgb(39, 39, 107);
+}
+.banner a.active {
+  color: gold;
+}
+h1{
+  font-size: 4vw;
+  color: gold;
+  padding-left: 4%;
+}
+
+p{
+  font-size:2vw;
+  color:black;
+  background-color: white;
+  margin: 5%;
+  border-radius: 25px;
+  padding: 5%;
+}
+
+.anim {
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  from {margin-left: 30%;}
+  to {float: 0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  from {margin-left: 30%;}
+  to {float: 0px;}
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.726);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 2vw;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
