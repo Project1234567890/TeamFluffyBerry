@@ -88,7 +88,8 @@ p{
 .line {
   background-color: gold;
   width: 100%;
-  margin: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   color: gold;
   font-size: 4px;
 }
