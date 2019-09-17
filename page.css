@@ -84,3 +84,11 @@ p{
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.line {
+  background-color: gold;
+  width: 100%;
+  margin: 20px;
+  color: gold;
+  font-size: 4px;
+}
