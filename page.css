@@ -104,7 +104,13 @@ p{
 footer {
   colour: white;
 }
-  
+
+.firstbock {
+  bacground-color: rgb(66, 56, 207);
+  width:75%;
+  margin-top: 800px;
+  color: rgb(66, 56, 207);
+}
   
   
   
