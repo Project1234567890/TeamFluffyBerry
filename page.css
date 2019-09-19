@@ -101,8 +101,12 @@ p{
   top: 0px;
 }
 
-footer {
-  colour: white;
+div1 {
+  font-size:2vw;
+  color:black;
+  background-color: white;
+  top-margin: 100%;
+  padding: 5%;
 }
 
 .firstbock {
@@ -112,6 +116,7 @@ footer {
   color: rgb(66, 56, 207);
 }
   
+
   
   
   
