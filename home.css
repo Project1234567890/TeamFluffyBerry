@@ -1,30 +1,82 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(39, 39, 107);
+  background: url(carrepair.png) no-repeat center;
+  background-size: cover;
 }
+
 .banner {
   overflow: hidden;
-  background-color: #000;
+  //background-color: rgba(255, 255, 255, 0.712);
+  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .banner a {
-  float: right;
-  color: #f2f2f2;
+  float: left;
+  color: gold;
   text-align: center;
-  padding: 14px 0px;
+  padding: 14px;
   text-decoration: none;
   font-size: 17px;
-  width: 10%;
+}
+.a left {
+  float: center;
 }
 .banner a:hover {
-  background-color: blue;
-  color: gold;
+  background-color: rgb(73, 95, 150);
+   color: gold;
 }
 .banner a.active {
-  background-color: #4CAF50;
-  color: white;
+  color: gold;
 }
-h2{
-  margin-top: 100px;
-  margin-left: 45%
+h1{
+  font-size: 80px;
+  color: gold;
+  padding-left: 4%;
+  margin-top: 80px;
 }
- 
+
+p{
+  font-size:2vw;
+  color:gold;
+  margin: 5%;
+  border-radius: 25px;
+  padding: 5%;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.726);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.line {
+  background-color: gold;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 320px
+  color: gold;
+  font-size: 7px;
+}
