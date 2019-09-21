@@ -22,13 +22,29 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
+
+.banner b {
+  float: left;
+  color: gold;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 .a left {
   float: center;
 }
+
+.b left {
+  float: center;
+}
+
 .banner a:hover {
   background-color: rgb(73, 95, 150);
    color: gold;
 }
+
 .banner a.active {
   color: gold;
 }
