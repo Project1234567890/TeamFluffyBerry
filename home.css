@@ -16,16 +16,7 @@ body {
 }
 .banner a {
   float: left;
-  color: gold;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.banner b {
-  float: left;
-  color: gold;
+  color: grgb(73, 95, 150);
   text-align: center;
   padding: 14px;
   text-decoration: none;
