@@ -10,13 +10,14 @@ body {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.712);
   //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   width: 100%;
 }
 .banner a {
   float: left;
-  color: grgb(73, 95, 150);
+  color: rgb(73, 95, 150);
   text-align: center;
   padding: 14px;
   text-decoration: none;
@@ -37,10 +38,10 @@ body {
   color: gold;
 }
 h1{
-  font-size: 80px;
+  font-size: 5.7vw;
   color: gold;
   padding-left: 4%;
-  margin-top: 80px;
+  margin-top: 10vw;
 }
 
 p{
