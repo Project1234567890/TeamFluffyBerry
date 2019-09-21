@@ -23,8 +23,9 @@ body {
   font-size: 17px;
 }
 
-.a left {
-  float: center;
+.left {
+ background-color: rgb(73, 95, 150);
+  padding: 14px;
 }
 
 .banner a:hover {
