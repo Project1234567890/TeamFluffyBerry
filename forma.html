@@ -8,27 +8,28 @@
   </head>
   <body>
     <script src="script.js"></script>
-    FORM A<br>
+<form action="/script.js">
+FORM A<br>
 Automotive Intake Repair Form<br>
 (including all motorized vehicles and equipment)<br><br>
 Work Order #
-<%input() %><br><br>
+<input type="text" name="workorder"><br><br>
 SCHOOL INFORMATION<br>
 School Name and Address:
-____________________________________________<br>
+<input type="text" name="school"><br>
 (hereinafter "the School”)<br><br>
-Teacher: _____________________<br><br>
+Teacher:<input type="text" name="teacher"><br><br>
 AUTOMOBILE TO BE REPAIRED<br>
 <table style="width:100%">
   <tr>
-    <td>Year:_____</td>
-    <td>Make: __________</td>
-    <td>Model:____________</td>
+    <td>Year:<input type="text" name="year"></td>
+    <td>Make: <input type="text" name="make"></td>
+    <td>Model:<input type="text" name="model"></td>
   </tr>
   <tr>
-    <td>VIN #:______________</td>
-    <td>License Plate:_________________</td>
-    <td>Odometer:___________</td>
+    <td>VIN #:<input type="text" name="vin"></td>
+    <td>License Plate:<input type="text" name="license"></td>
+    <td>Odometer:<input type="text" name="odometer"></td>
   </tr>
 </table>
 <br><br>
@@ -36,8 +37,8 @@ Detailed description of work to be performed including anticipated parts (includ
 new part provided by the original equipment manufacturer, a new part not provided by the original
 equipment manufacturer, a used part or a reconditioned part) shop materials, environmental related, fees,
 disposal/recycling fees, etc.:<br><br>
-__________________________<br><br>
-Date on which the work shall be completed:___________<br><br>
+<input type="text" name="description"><br><br>
+Date on which the work shall be completed:<input type="text" name="end_date"><br><br>
 
 
 <table style="width:100%">
@@ -49,37 +50,37 @@ Date on which the work shall be completed:___________<br><br>
  
   <tr>
     <td>PARTS:</td>
-    <td>$____________</td>
-    <td>$____________</td>
+    <td>$<input type="text" name="parts_a"></td>
+    <td>$<input type="text" name="parts_b"></td>
   </tr>
   <tr>
     <td>LABOUR:</td>
-    <td>$____________</td>
-    <td>$____________</td>
+    <td>$<input type="text" name="labour_a"></td>
+    <td>$<input type="text" name="labour_b"></td>
     </tr>
       <tr>
     <td>SHOP SUPPLIES:</td>
-    <td>$____________</td>
-    <td>$____________</td>
+    <td>$<input type="text" name="shop_a"></td>
+    <td>$<input type="text" name="shop_b"></td>
     </tr>
     <tr>
     <td>RECYCLING/ DISPOSAL FEE:</td>
-    <td>$____________</td>
-    <td>$____________</td>
+    <td>$<input type="text" name="fee_a"></td>
+    <td>$<input type="text" name="fee_b"></td>
     </tr>
     <tr>
     <td>TOTAL ESTIMATED COST:</td>
     <td></td>
-    <td>$____________</td>
+    <td>$<input type="text" name="total_cost"></td>
     </tr>
 </table>
 <br><br>
 The Board agrees that it will not charge the undersigned an amount that exceeds the Total
 Estimated Cost by more than 10 per cent.<br>
-Date of estimate:__________________________________<br>
-This estimate expires on:_____________________________<br><br>
-Any parts removed in the course of work on or repairs to the automobile shall be (select one):
-(A) returned to the undersigned ______; or (B) disposed of by the School_______<br><br>
+Date of estimate:<input type="text" name="est_date"><br>
+This estimate expires on:<input type="text" name="expire"><br><br>
+Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned<input type="radio" name="description">
+ ; or (B) disposed of by the School<input type="radio" name="description"><br><br>
 
 WAIVER AND RELEASE OF LIABILITY<br>
 · I agree to release and hold the Peel District School Board (the “Board”), its trustees, officers, agents,
@@ -168,6 +169,8 @@ Agreement, having taken specific note of the warning stated above, and intend to
 this Agreement in so signing it on this ___ day of __________________ , 20___.<br>
 3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
 Signature of Registered Owner: ___________________________<br><br>
-Name : ___________________________________
+Name : ___________________________________<br>
+<input type="submit" value="Submit">
+</form>
   </body>
 </html>
