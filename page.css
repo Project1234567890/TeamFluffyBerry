@@ -41,7 +41,13 @@ p{
   border-radius: 25px;
   padding: 5%;
 }
-
+form{
+  color:black;
+  background-color: white;
+  margin: 5%;
+  border-radius: 25px;
+  padding: 5%;
+}
 .anim {
   -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
