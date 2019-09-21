@@ -27,10 +27,6 @@ body {
   float: center;
 }
 
-.b left {
-  float: center;
-}
-
 .banner a:hover {
   background-color: rgb(73, 95, 150);
    color: gold;
