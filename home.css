@@ -4,7 +4,7 @@ body {
   background-color: rgb(73, 95, 150);
   background-image: url("carrepair.jpg") ;
     background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
 }
 
