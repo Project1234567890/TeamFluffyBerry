@@ -1,5 +1,4 @@
-  
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +43,7 @@
   new part provided by the original equipment manufacturer, a new part not provided by the original
   equipment manufacturer, a used part or a reconditioned part) shop materials, environmental related, fees,
   disposal/recycling fees, etc.:<br><br>
-  <input type="textarea"  rows="10" cols="80" name="description">
+  <input type="text" name="description">
   <br><br>
   Date on which the work shall be completed:<input type="text" name="end_date"><br><br>
 
@@ -178,9 +177,8 @@
   3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
   Signature of Registered Owner: ___________________________<br><br>
   Name : ___________________________________<br><br>
-  <input type="submit" value="Submit">
+  <input type="submit" name="submit" value="Submit">
 </form>
-
 <?php
   }else{
     $workorder = $_POST['workorder'];
