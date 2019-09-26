@@ -1,4 +1,4 @@
-   
+ 
 <!DOCTYPE html>
 <html>
   <head>
@@ -71,7 +71,7 @@ if($x==0){
   new part provided by the original equipment manufacturer, a new part not provided by the original
   equipment manufacturer, a used part or a reconditioned part) shop materials, environmental related, fees,
   disposal/recycling fees, etc.:<br><br>
-  <input type="text" name="description" value="<?php echo $workorder?>">
+  <textarea name="description" value="<?php echo $workorder?>" rows="5" cols="40">
   <br><br>
   Date on which the work shall be completed:<input type="text" name="end_date" value="<?php echo $workorder?>"><br><br>
 
@@ -353,7 +353,7 @@ FORM A<br>
 
   Automotive Repair Waiver<br>
   Work Order #
-  _______________<br><br>
+  <input type="text" name="workorder" value="<?php echo $workorder?>"><br><br>
   AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT<br>
   *Schools must retain form for 3 years*<br>
   WARNING: BY SIGNING THIS AGREEMENT YOU GIVE UP YOUR RIGHT TO BRING A COURT ACTION TO RECOVER
