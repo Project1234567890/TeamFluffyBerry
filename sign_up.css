@@ -4,8 +4,7 @@ body {
   background-color: rgb(73, 95, 150);
   background-image: url("loginstamp.gif");
   background-repeat: repeat;
-  background-hieght: 20px;
-  background-position: center top;
+  background-size: 10%;
 }
 
 .banner {
