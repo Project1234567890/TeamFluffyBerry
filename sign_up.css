@@ -65,38 +65,9 @@ h1{
   font-size:1.5vw;
   color:gold;
 }
+.position_Center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: rgba(0, 0, 0, 0.726);
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  font-size: 10px;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-
-.line {
-  background-color: gold;
-  width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 320px
-  color: gold;
-  font-size: 7px;
 }
