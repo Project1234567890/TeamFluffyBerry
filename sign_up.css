@@ -65,9 +65,24 @@ h1{
   font-size:1.5vw;
   color:gold;
 }
+.TEST {
+  transform: scale(0.5);
+}
+
 .position_Center {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
 
 }
+
+.person_Type {
+
+width: 27%;
+height: 16%;
+float: left;
+padding: 2%;
+margin: 0% 3%;
+  background-color: lightgrey;
+
+  text-align:center;
