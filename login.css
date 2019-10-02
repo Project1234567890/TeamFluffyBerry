@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(73, 95, 150);
-  NO background-image: url("loginstamp.gif");*/
+  background-image: url("loginstamp.gif");*/
   background-repeat: repeat;
   background-size: 3.5vw 3.5vw;
 }
@@ -59,31 +59,5 @@ h1{
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
-
 }
 
-.body2{
-  font-size:1.5vw;
-  color:gold;
-}
-.TEST {
-  transform: scale(0.5);
-}
-
-.position_Center {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-
-}
-
-.person_Type {
-
-width: 27%;
-height: 16%;
-float: left;
-padding: 2%;
-margin: 0% 3%;
-  background-color: lightgrey;
-
-  text-align:center;
