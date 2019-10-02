@@ -87,3 +87,13 @@ margin: 0% 3%;
   background-color: lightgrey;
 
   text-align:center;
+}
+
+.block {
+  width: 25%;
+  height: 16%;
+  float: left;
+  padding: 2%;
+  
+  
+}
