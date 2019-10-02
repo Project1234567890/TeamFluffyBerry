@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(73, 95, 150);
-  background-image: url("loginstamp.gif");*/
+  background-image: url("loginstamp.gif");
   background-repeat: repeat;
   background-size: 3.5vw 3.5vw;
 }
@@ -38,11 +38,16 @@ body {
 .banner a.active {
   color: gold;
 }
+
+.box {
+  padding: 3vw;
+  background-color: white;
+}
+
+
 h1{
   font-size: 5.7vw;
   color: gold;
-  padding-left: 4%;
-  margin-top: 6vw;
   margin-bottom: 3vw;
 }
 
