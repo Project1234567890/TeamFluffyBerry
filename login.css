@@ -41,30 +41,45 @@ body {
 
 .box {
   padding: 3vw;
-  background-color: red;
-  margin: 25%;
+  background-color: white;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
   float: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 
 h1{
-  font-size: 5.7vw;
+  font-size: 5vw;
   color: gold;
   margin-bottom: 3vw;
+  margin-top: 1vw;
 }
 
-.subhead{
-  font-size:2.5vw;
-  color:gold;
-  margin: 5%;
+button {
+  background-color:  gold;
+  padding: 10px;
+  width: 100%;
+ border: none;
+ float: center;
+ color: rgb(73, 95, 150);
+ font-size: 15px;
+ border-radius: 5px;
 }
 
-.body{
-  font-size:1.75vw;
-  color:gold;
-  margin-top: 12vw;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%;
+button:hover {
+  background-color: rgb(73, 95, 150);
+  color: gold;
 }
 
+.text {
+ width: 100%;
+ float: center;
+ border-top: none;
+ border-left: none;
+ border-right: none;
+ border-color: rgb(219, 219, 219);
+ border-width: 2px;
+ font-size: 15px;
+}
