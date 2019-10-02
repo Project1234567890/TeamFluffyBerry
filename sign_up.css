@@ -71,10 +71,14 @@ h1{
 }
 
 .position_Center {
+  left: 5%;
+  width: 90%;
+}
+
+.position_Center {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-
 }
 
 .person_Type {
