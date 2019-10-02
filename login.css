@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(73, 95, 150);
+  /* NO background-image: url("loginstamp.gif");*/
+  background-repeat: repeat;
+  background-size: 3.5vw 3.5vw;
+}
+
+.banner {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.712);
+  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+.banner a {
+  float: left;
+  color: rgb(73, 95, 150);
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.left a {
+ background-color: rgb(73, 95, 150);
+  padding: 14px;
+}
+
+.banner a:hover {
+  background-color: rgb(73, 95, 150);
+   color: gold;
+}
+
+.banner a.active {
+  color: gold;
+}
+h1{
+  font-size: 5.7vw;
+  color: gold;
+  padding-left: 4%;
+  margin-top: 6vw;
+  margin-bottom: 3vw;
+}
+
+.subhead{
+  font-size:2.5vw;
+  color:gold;
+  margin: 5%;
+}
+
+.body{
+  font-size:1.75vw;
+  color:gold;
+  margin-top: 12vw;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+
+}
+
+.body2{
+  font-size:1.5vw;
+  color:gold;
+}
+.TEST {
+  transform: scale(0.5);
+}
+
+.position_Center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+
+}
+
+.person_Type {
+
+width: 27%;
+height: 16%;
+float: left;
+padding: 2%;
+margin: 0% 3%;
+  background-color: lightgrey;
+
+  text-align:center;
