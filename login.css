@@ -66,6 +66,7 @@ button {
  color: rgb(73, 95, 150);
  font-size: 15px;
  border-radius: 5px;
+  outline: none;
 }
 
 button:hover {
@@ -82,4 +83,5 @@ button:hover {
  border-color: rgb(219, 219, 219);
  border-width: 2px;
  font-size: 15px;
+ outline: none;
 }
