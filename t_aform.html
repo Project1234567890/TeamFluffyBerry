@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html>
   <head>
@@ -47,23 +46,23 @@ if($x==0){
   Automotive Intake Repair Form<br>
   (including all motorized vehicles and equipment)<br><br>
   Work Order #
-  <input type="text" name="workorder" value="<?php echo $workorder?>"><br><br>
+  <input type="text" name="workorder" value="<?php echo $workorder?>" required><br><br>
   SCHOOL INFORMATION<br>
   School Name and Address:
-  <input type="text" name="school" value="<?php echo $workorder?>"><br>
+  <input type="text" name="school" value="<?php echo $workorder?>"required><br>
   (hereinafter "the School”)<br><br>
-  Teacher:<input type="text" name="teacher" value="<?php echo $workorder?>"><br><br>
+  Teacher:<input type="text" name="teacher" value="<?php echo $workorder?>"required><br><br>
   AUTOMOBILE TO BE REPAIRED<br>
   <table style="width:100%">
     <tr>
-      <td>Year:<input type="text" name="year" value="<?php echo $workorder?>"></td>
-      <td>Make: <input type="text" name="make" value="<?php echo $workorder?>"></td>
-      <td>Model:<input type="text" name="model" value="<?php echo $workorder?>"></td>
+      <td>Year:<input type="text" name="year" value="<?php echo $workorder?>"required></td>
+      <td>Make: <input type="text" name="make" value="<?php echo $workorder?>"required></td>
+      <td>Model:<input type="text" name="model" value="<?php echo $workorder?>"required></td>
     </tr>
     <tr>
-      <td>VIN #:<input type="text" name="vin" value="<?php echo $workorder?>"></td>
-      <td>License Plate:<input type="text" name="license" value="<?php echo $workorder?>"></td>
-      <td>Odometer:<input type="text" name="odometer" value="<?php echo $workorder?>"></td>
+      <td>VIN #:<input type="text" name="vin" value="<?php echo $workorder?>"required></td>
+      <td>License Plate:<input type="text" name="license" value="<?php echo $workorder?>"required></td>
+      <td>Odometer:<input type="text" name="odometer" value="<?php echo $workorder?>"required></td>
     </tr>
   </table>
   <br><br>
@@ -71,9 +70,9 @@ if($x==0){
   new part provided by the original equipment manufacturer, a new part not provided by the original
   equipment manufacturer, a used part or a reconditioned part) shop materials, environmental related, fees,
   disposal/recycling fees, etc.:<br><br>
-  <textarea name="description" value="<?php echo $workorder?>" rows="5" cols="40">
+  <textarea name="description" value="<?php echo $workorder?>" rows="5" cols="40"required></textarea>
   <br><br>
-  Date on which the work shall be completed:<input type="text" name="end_date" value="<?php echo $workorder?>"><br><br>
+  Date on which the work shall be completed:<input type="text" name="end_date" value="<?php echo $workorder?>"required><br><br>
 
 
   <table style="width:100%">
@@ -85,35 +84,35 @@ if($x==0){
   
     <tr>
       <td>PARTS:</td>
-      <td>$<input type="text" name="parts_a" value="<?php echo $parts_a?>"></td>
-      <td>$<input type="text" name="parts_b" value="<?php echo $parts_b?>"></td>
+      <td>$<input type="text" name="parts_a" value="<?php echo $parts_a?>"required></td>
+      <td>$<input type="text" name="parts_b" value="<?php echo $parts_b?>"required></td>
     </tr>
     <tr>
       <td>LABOUR:</td>
-      <td>$<input type="text" name="labour_a" value="<?php echo $labour_a?>"></td>
-      <td>$<input type="text" name="labour_b" value="<?php echo $labour_b?>"></td>
+      <td>$<input type="text" name="labour_a" value="<?php echo $labour_a?>"required></td>
+      <td>$<input type="text" name="labour_b" value="<?php echo $labour_b?>"required></td>
       </tr>
         <tr>
       <td>SHOP SUPPLIES:</td>
-      <td>$<input type="text" name="shop_a" value="<?php echo $shop_a?>"></td>
-      <td>$<input type="text" name="shop_b" value="<?php echo $shop_b?>"></td>
+      <td>$<input type="text" name="shop_a" value="<?php echo $shop_a?>"required></td>
+      <td>$<input type="text" name="shop_b" value="<?php echo $shop_b?>"required></td>
       </tr>
       <tr>
       <td>RECYCLING/ DISPOSAL FEE:</td>
-      <td>$<input type="text" name="fee_a" value="<?php echo $fee_a?>"></td>
-      <td>$<input type="text" name="fee_b" value="<?php echo $fee_b?>"></td>
+      <td>$<input type="text" name="fee_a" value="<?php echo $fee_a?>"required></td>
+      <td>$<input type="text" name="fee_b" value="<?php echo $fee_b?>"required></td>
       </tr>
       <tr>
       <td>TOTAL ESTIMATED COST:</td>
       <td></td>
-      <td>$<input type="text" name="total_cost" value="<?php echo $total_cost?>"></td>
+      <td>$<input type="text" name="total_cost" value="<?php echo $total_cost?>"required></td>
       </tr>
   </table>
   <br><br>
   The Board agrees that it will not charge the undersigned an amount that exceeds the Total
   Estimated Cost by more than 10 per cent.<br>
-  Date of estimate:<input type="text" name="est_date" value="<?php echo $est_date?>"><br>
-  This estimate expires on:<input type="text" name="expire" value="<?php echo $expire?>"><br><br>
+  Date of estimate:<input type="text" name="est_date" value="<?php echo $est_date?>"required><br>
+  This estimate expires on:<input type="text" name="expire" value="<?php echo $expire?>"required><br><br>
   Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned _______
   ; or (B) disposed of by the School _______<br><br>
 
@@ -353,7 +352,7 @@ FORM A<br>
 
   Automotive Repair Waiver<br>
   Work Order #
-  <input type="text" name="workorder" value="<?php echo $workorder?>"><br><br>
+  <?php echo $workorder?><br><br>
   AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT<br>
   *Schools must retain form for 3 years*<br>
   WARNING: BY SIGNING THIS AGREEMENT YOU GIVE UP YOUR RIGHT TO BRING A COURT ACTION TO RECOVER
@@ -398,7 +397,7 @@ FORM A<br>
   3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
   Signature of Registered Owner: ___________________________<br><br>
   Name : ___________________________________<br><br>
-  <input type="submit" name="edit" value="Edit">
+  <input type="submit" name="edit" value="Change">
   <button>Send</button>
     </form>
   <?php  
@@ -407,16 +406,6 @@ FORM A<br>
 if(isset($_POST['edit'])){
      $x=2;
 };
-if ($_POST['submit']){
-     $sql="INSERT INTO 'FORM_A'('id', 'work_order_num', 'school_name', 'teacher_name', 'year', 'make', 'model', 'vin_num', 'license _plate', 'odometer', 'detailed_desc`, `parts_ppu`, `parts_total`, 'labour_ppu', 'labour_total', 'shop_supplies_ppu', 'shop_supplies_total', 'recycle_dispose_ppu', 'recycle_dispose_total', 'estimated_total_cost', 'estimate_date', 'estimate_expires_on') VALUES ('$workorder', '$school', '$teacher', '$year', '$make', '$model', '$vin', '$license', '$odometer', '$description', '$end_date', '$parts_a', '$parts_b', '$shop_a', '$shop_b', '$labour_a', '$labour_b', '$fee_a', '$fee_b', '$total_cost', '$est_date', '$expire';)"
-   if($conn->query($sql)==TRUE){
-
-   }else{
-     echo "Error ".$sql."<br>".$conn->error;
-   }
-}
-      ?>
-
-      <script>includeHTML()</script>
+?>
   </body>
 </html>
