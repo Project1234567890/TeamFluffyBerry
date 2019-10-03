@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(73, 95, 150);
-  /* NO background-image: url("loginstamp.gif");*/
+  /* NO! background-image: url("loginstamp2.gif");*/
   background-repeat: repeat;
   background-size: 3.5vw 3.5vw;
 }
@@ -70,10 +70,6 @@ h1{
   transform: scale(0.5);
 }
 
-.position_Center {
-  left: 5%;
-  width: 90%;
-}
 
 .position_Center {
   margin-left: auto;
