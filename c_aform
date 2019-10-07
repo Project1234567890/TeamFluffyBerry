@@ -129,7 +129,7 @@ FORM A<br>
   ; or (B) disposed of by the School <input type="radio" name="removed" value="a" <?php if($removed=="b"){echo "selected";} ?>required><br><br>
 
   WAIVER AND RELEASE OF LIABILITY<br>
-  · I agree to release and hold the Peel District School Board (the “Board”), its trustees, officers, agents,
+  &emsp;· I agree to release and hold the Peel District School Board (the “Board”), its trustees, officers, agents,
   volunteers, students and insurers and their respective heirs, executors, personal representatives,
   successors and assigns (the “Indemnified Parties”) harmless and to indemnify them from and
   against all actions, damages, claims and demands which may be brought against the Indemnified
@@ -138,18 +138,18 @@ FORM A<br>
   death of person or damage to or loss of property belonging to any person if such action depends in
   any way, in whole or in part on work having been performed on the vehicle by students of the
   Board.<br>
-  · I agree to pay for all labour, parts, materials, supplies, environmental fees, disposal and recycling
+  &emsp;· I agree to pay for all labour, parts, materials, supplies, environmental fees, disposal and recycling
   fees of all kinds, required to perform the work described above. Final payment is due when the
   work is completed.<br>
-  · I understand that if my automobile is not claimed by me within THIRTY (30) days after notice of
+  &emsp;· I understand that if my automobile is not claimed by me within THIRTY (30) days after notice of
   completion of work, whether or not I have actually received notice, the automobile and all property
   therein or thereon will be deemed abandoned and disposed of as considered appropriate in the sole
   discretion of the Board with the entire proceeds from such disposal belonging to the Board as
   beneficial owner and not as a trustee for its own use absolutely.<br>
-  · I agree that any notice may be adequately given by prepaid post to the address below. I agree that
+  &emsp;· I agree that any notice may be adequately given by prepaid post to the address below. I agree that
   the onus of keeping up to date at all times as to the progress of and cost of the repairs to the
   automobile rests solely with me.<br>
-  · I may decline the estimated amount above and instead authorize the Board to perform the work
+  &emsp;· I may decline the estimated amount above and instead authorize the Board to perform the work
   outlined at a cost not to exceed $<input type="text" name="exceed" value="<?php echo $exceed?>" required>, by initialing
   here:<input type="text" name="initial" value="<?php echo $initial?>" required>.<br><br>
   <table style="width:100%">
@@ -179,30 +179,30 @@ FORM A<br>
   PROPERTY ARISING DIRECTLY, INDIRECTLY OR CONSEQUENTIALLY FROM OR RELATED TO YOUR CHOICE
   TO HAVE UNTRAINED STUDENTS WORK ON YOUR AUTOMOBILE.<br>
   PRELIMINARY UNDERSTANDING<br>
-  1. The undersigned acknowledges and agrees that while the undersigned’s automobile and all property located in or
+ &emsp; 1. The undersigned acknowledges and agrees that while the undersigned’s automobile and all property located in or
   on the automobile is located at the School, whether indoors or outside, that the undersigned assumes all risk
   of loss or damage to the automobile and the said property and further agree that:<br>
-  (a) The undersigned is aware that untrained students will perform work on our automobile and that
+  &emsp;&emsp;(a) The undersigned is aware that untrained students will perform work on our automobile and that
   allowing untrained students to do so has inherent risks and hazards, which the undersigned voluntarily
   assumes; and<br>
-  (b) The undersigned has full knowledge of the nature and extent of the risks associated with allowing
+  &emsp;&emsp;(b) The undersigned has full knowledge of the nature and extent of the risks associated with allowing
   untrained students to work on the undersigned’s automobile, the particulars of which include but are
   not limited to:<br>
-  · damage to or destruction of the automobile or any of its component parts, which damage or
+  &emsp;&emsp;&emsp;· damage to or destruction of the automobile or any of its component parts, which damage or
   destruction will not be repaired except at my full cost and expense;<br>
-  · return of the automobile in an unsafe and un-road worthy condition;<br>
-  · death or personal injury to the undersigned or others from operation of the automobile following
+  &emsp;&emsp;&emsp;· return of the automobile in an unsafe and un-road worthy condition;<br>
+  &emsp;&emsp;&emsp;· death or personal injury to the undersigned or others from operation of the automobile following
   work being done on it by untrained students; and<br>
-  (c) The undersigned agrees that there may be unforeseen and unforeseeable risks associated with the
+  &emsp;&emsp;(c) The undersigned agrees that there may be unforeseen and unforeseeable risks associated with the
   undersigned’s choice to have untrained students work on the undersigned’s automobile and those risks
   although not foreseen or foreseeable are accepted, it being understood that the intent of this waiver
   and release is to cover any and all eventualities whether foreseeable or not.<br>
-  2. Despite the above-mentioned risks and hazards, the undersigned freely and voluntarily assume such risks and
+  &emsp;2. Despite the above-mentioned risks and hazards, the undersigned freely and voluntarily assume such risks and
   hazards inherent in allowing untrained students to work on the undersigned’ automobile at the School.<br>
   <input type="text" name="initial" value="<?php echo $initial?>" required><br>
   (Initial)<br><br>
   RELEASE AND WAIVER OF LIABILITY<br>
-  1. In consideration of the work to be done on the undersigned’s automobile, which will be done by untrained students
+ &emsp; 1. In consideration of the work to be done on the undersigned’s automobile, which will be done by untrained students
   of the Board, whether the work occurs during school hours, after school hours, or at any other time, the undersigned,
   as the owner(s) of the automobile described on the attached Repair Work Order Form agree to release, indemnify
   and save harmless the Indemnified Parties and each of them against and from all actions damages, claims and
@@ -210,10 +210,10 @@ FORM A<br>
   party in respect of or arising out of any accidents which may result in injury or the death of person or damage to or loss
   of property belonging to any person if such action depends in any way, in whole or in part on work having been done
   on the automobile by students of the School.<br>
-  2. The undersigned acknowledges that the undersigned, having read and understood all of the contents of this
+  &emsp;2. The undersigned acknowledges that the undersigned, having read and understood all of the contents of this
   Agreement, having taken specific note of the warning stated above, and intend to be legally bound to the contents of
   this Agreement in so signing it on this <input type="text" name="sign_day" value="Day" required> day of <input type="text" name="sign_month" value="Month" required> , 20<input type="text" name="Year" value="<?php echo $sign_year?>" required>.<br>
-  3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
+  &emsp;3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
   Signature of Registered Owner: <input type="text" name="signature" value="<?php echo $signature?>" required><br><br>
   Name : <input type="text" name="name" value="<?php echo $name?> " required><br><br>
   <input type="submit" name="submit" value="Submit">
@@ -311,7 +311,7 @@ FORM A<br>
   ; or (B) disposed of by the School <input type="radio" name="remove" value="a" <?php if($remove=="b"){echo "selected";} ?>><br><br>
 
   WAIVER AND RELEASE OF LIABILITY<br>
-  · I agree to release and hold the Peel District School Board (the “Board”), its trustees, officers, agents,
+  &emsp;· I agree to release and hold the Peel District School Board (the “Board”), its trustees, officers, agents,
   volunteers, students and insurers and their respective heirs, executors, personal representatives,
   successors and assigns (the “Indemnified Parties”) harmless and to indemnify them from and
   against all actions, damages, claims and demands which may be brought against the Indemnified
@@ -320,18 +320,18 @@ FORM A<br>
   death of person or damage to or loss of property belonging to any person if such action depends in
   any way, in whole or in part on work having been performed on the vehicle by students of the
   Board.<br>
-  · I agree to pay for all labour, parts, materials, supplies, environmental fees, disposal and recycling
+  &emsp;· I agree to pay for all labour, parts, materials, supplies, environmental fees, disposal and recycling
   fees of all kinds, required to perform the work described above. Final payment is due when the
   work is completed.<br>
-  · I understand that if my automobile is not claimed by me within THIRTY (30) days after notice of
+  &emsp;· I understand that if my automobile is not claimed by me within THIRTY (30) days after notice of
   completion of work, whether or not I have actually received notice, the automobile and all property
   therein or thereon will be deemed abandoned and disposed of as considered appropriate in the sole
   discretion of the Board with the entire proceeds from such disposal belonging to the Board as
   beneficial owner and not as a trustee for its own use absolutely.<br>
-  · I agree that any notice may be adequately given by prepaid post to the address below. I agree that
+  &emsp;· I agree that any notice may be adequately given by prepaid post to the address below. I agree that
   the onus of keeping up to date at all times as to the progress of and cost of the repairs to the
   automobile rests solely with me.<br>
-  · I may decline the estimated amount above and instead authorize the Board to perform the work
+ &emsp; · I may decline the estimated amount above and instead authorize the Board to perform the work
   outlined at a cost not to exceed $<?php echo $exceed?>, by initialing
   here:<?php echo $initial?>.<br><br>
   <table style="width:100%">
@@ -361,30 +361,30 @@ FORM A<br>
   PROPERTY ARISING DIRECTLY, INDIRECTLY OR CONSEQUENTIALLY FROM OR RELATED TO YOUR CHOICE
   TO HAVE UNTRAINED STUDENTS WORK ON YOUR AUTOMOBILE.<br>
   PRELIMINARY UNDERSTANDING<br>
-  1. The undersigned acknowledges and agrees that while the undersigned’s automobile and all property located in or
+ &emsp; 1. The undersigned acknowledges and agrees that while the undersigned’s automobile and all property located in or
   on the automobile is located at the School, whether indoors or outside, that the undersigned assumes all risk
   of loss or damage to the automobile and the said property and further agree that:<br>
-  (a) The undersigned is aware that untrained students will perform work on our automobile and that
+  &emsp;&emsp;(a) The undersigned is aware that untrained students will perform work on our automobile and that
   allowing untrained students to do so has inherent risks and hazards, which the undersigned voluntarily
   assumes; and<br>
-  (b) The undersigned has full knowledge of the nature and extent of the risks associated with allowing
+  &emsp;&emsp;(b) The undersigned has full knowledge of the nature and extent of the risks associated with allowing
   untrained students to work on the undersigned’s automobile, the particulars of which include but are
   not limited to:<br>
-  · damage to or destruction of the automobile or any of its component parts, which damage or
+  &emsp;&emsp;&emsp;· damage to or destruction of the automobile or any of its component parts, which damage or
   destruction will not be repaired except at my full cost and expense;<br>
-  · return of the automobile in an unsafe and un-road worthy condition;<br>
-  · death or personal injury to the undersigned or others from operation of the automobile following
+  &emsp;&emsp;&emsp;· return of the automobile in an unsafe and un-road worthy condition;<br>
+  &emsp;&emsp;&emsp;· death or personal injury to the undersigned or others from operation of the automobile following
   work being done on it by untrained students; and<br>
-  (c) The undersigned agrees that there may be unforeseen and unforeseeable risks associated with the
+  &emsp;&emsp;(c) The undersigned agrees that there may be unforeseen and unforeseeable risks associated with the
   undersigned’s choice to have untrained students work on the undersigned’s automobile and those risks
   although not foreseen or foreseeable are accepted, it being understood that the intent of this waiver
   and release is to cover any and all eventualities whether foreseeable or not.<br>
-  2. Despite the above-mentioned risks and hazards, the undersigned freely and voluntarily assume such risks and
+ &emsp; 2. Despite the above-mentioned risks and hazards, the undersigned freely and voluntarily assume such risks and
   hazards inherent in allowing untrained students to work on the undersigned’ automobile at the School.<br>
   <?php echo $initial?><br>
   (Initial)<br><br>
   RELEASE AND WAIVER OF LIABILITY<br>
-  1. In consideration of the work to be done on the undersigned’s automobile, which will be done by untrained students
+  &emsp;1. In consideration of the work to be done on the undersigned’s automobile, which will be done by untrained students
   of the Board, whether the work occurs during school hours, after school hours, or at any other time, the undersigned,
   as the owner(s) of the automobile described on the attached Repair Work Order Form agree to release, indemnify
   and save harmless the Indemnified Parties and each of them against and from all actions damages, claims and
@@ -392,10 +392,10 @@ FORM A<br>
   party in respect of or arising out of any accidents which may result in injury or the death of person or damage to or loss
   of property belonging to any person if such action depends in any way, in whole or in part on work having been done
   on the automobile by students of the School.<br>
-  2. The undersigned acknowledges that the undersigned, having read and understood all of the contents of this
+  &emsp;2. The undersigned acknowledges that the undersigned, having read and understood all of the contents of this
   Agreement, having taken specific note of the warning stated above, and intend to be legally bound to the contents of
     this Agreement in so signing it on this <?php echo $sign_day?> day of <?php echo $sign_month?> , 20<?php echo $sign_year?>.<br>
-  3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
+ &emsp; 3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
   Signature of Registered Owner: <?php echo $signature?><br><br>
   Name : <?php echo $name?><br><br>
   <input type="submit" name="edit" value="Change">
