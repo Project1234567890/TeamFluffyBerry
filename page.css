@@ -1,21 +1,24 @@
 body {
-  margin: 0;
+  margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(39, 39, 107);
+  background-color: rgb(61, 81, 129);
 }
 .banner {
   overflow: hidden;
   background-color: white;
-  border-bottom: gold solid 6px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+  border-bottom: gold solid 1vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  padding-bottom: 2vw;
+  height: 2vw;
 }
 .banner a {
   float: left;
   color: rgb(37, 74, 153);
   text-align: center;
-  padding: 14px;
+  padding: 1.5vw;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.5vw;
+  margin-top: -2.5vw;
 }
 .a left {
   float: center;
@@ -23,6 +26,7 @@ body {
 .banner a:hover {
   background-color: rgb(226, 232, 247);
    color: rgb(39, 39, 107);
+   border-radius: 2vw;
 }
 .banner a.active {
   color: gold;
@@ -31,15 +35,19 @@ h1{
   font-size: 4vw;
   color: gold;
   padding-left: 4%;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: lighter;
 }
 
-p{
-  font-size:2vw;
+.subhead {
+  font-size: 1.5vw;
   color:black;
   background-color: white;
-  margin: 5%;
-  border-radius: 25px;
-  padding: 5%;
+  margin: 3%;
+  margin-bottom: 
+  border-radius: 1.5vw;
+  padding: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 form{
   color:black;
@@ -96,7 +104,7 @@ form{
   width: 100%;
   margin-top: 15px;
   margin-bottom: 15px;
-  margin-left: 320px
+  margin-left: 320px;
   color: gold;
   font-size: 7px;
 }
@@ -111,18 +119,15 @@ div {
   font-size:2vw;
   color:black;
   background-color: white;
-  top-margin: 100%;
   padding: 5%;
+  border-bottom: 0.5vw solid gold;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .firstbock {
-  bacground-color: rgb(66, 56, 207);
+  background-color: rgb(66, 56, 207);
   width:75%;
   margin-top: 800px;
   color: rgb(66, 56, 207);
 }
-  
-
-  
-  
   
