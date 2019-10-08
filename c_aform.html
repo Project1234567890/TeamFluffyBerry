@@ -307,8 +307,8 @@ FORM A<br>
   Estimated Cost by more than 10 per cent.<br>
   Date of estimate:<?php echo $est_date; ?><br>
   This estimate expires on:<?php echo $expire; ?><br><br>
-  Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned <input type="radio" name="remove" value="b" <?php if($remove=="a"){echo "selected";} ?>>
-  ; or (B) disposed of by the School <input type="radio" name="remove" value="a" <?php if($remove=="b"){echo "selected";} ?>><br><br>
+Any parts removed in the course of work on or repairs to the automobile shall be <?php if($removed=="a")
+{echo "returned to the undersigned";}else{echo "disposed of by the School";}?><br><br>
 
   WAIVER AND RELEASE OF LIABILITY<br>
   &emsp;· I agree to release and hold the Peel District School Board (the “Board”), its trustees, officers, agents,
