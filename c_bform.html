@@ -7,6 +7,7 @@
   </head>
   <body>
     <?php  
+    $x=0;
     $workorder= 
     $teacher=
     $year=
@@ -36,7 +37,8 @@
     $email=
     $invoice_date=
     $invoice_num=
-    $signature=null;
+    $signature=
+    $removed=null;
     
   if (!isset($_POST['submit']) or $x==2){
       
@@ -98,7 +100,7 @@ Any parts removed in the course of work on or repairs to the automobile shall be
     <tr>
       <td>PARTS:</td>
       <td>$<?php echo $parts_a?>
-      <td>$<?php echo $parts_b?>" required></td>
+      <td>$<?php echo $parts_b?></td>
     </tr>
     <tr>
       <td>LABOUR:</td>
@@ -147,13 +149,13 @@ you authorized. In either case, the repairer may not charge for any work you did
 If you have concerns about the work or repairs performed by the repairer or about your rights or duties under the
 Consumer Protection Act, 2002, (Ontario) you should contact the Ministry of Consumer and Business Services.<br><br>
 PEEL DISTRICT SCHOOL BOARD<br>
-Teacher’s Name:<?php echo $teacher?>
+Teacher’s Name:<?php echo $teacher?><br>
 I have authority to bind the Board.<br>
 E. & O. Excepted<br><br>
 ACKNOWLEDGEMENT<br>
 The foregoing is acknowledged and accepted by the undersigned.<br><br>
 Signature of Registered Owner: <input type="text" name="signature" value="<?php echo $signature?>" required><br><br>
-Name: <input type="text" name="name" value="<?php echo $name?>" required><br>
+Name: <input type="text" name="name" value="<?php echo $name?>" required><br><br>
     
     
     <input type="submit" name="submit" value="Submit">
@@ -161,6 +163,7 @@ Name: <input type="text" name="name" value="<?php echo $name?>" required><br>
 </form>
 <?php
   }else{
+    $removed=$_POST['removed'];
     $name=$_POST['name'];
     $address=$_POST['address'];
     $phone=$_POST['phone'];
@@ -212,8 +215,7 @@ part or a reconditioned part) shop materials, environmental related, fees, dispo
 Date of authorization of work: <?php echo $date_author?><br><br>
 Date of completion of work:<?php echo $date_complete?><br><br>
 Date of return of vehicle: <?php echo $date_return?><br><br>
-Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned <input type="radio" name="removed" value="b" <?php if($removed=="a"){echo "selected";} ?>required>
-  ; or (B) disposed of by the School <input type="radio" name="removed" value="a" <?php if($removed=="b"){echo "selected";} ?>required><br><br>
+Any parts removed in the course of work on or repairs to the automobile shall be <?php if($removed=="a"){echo "returned to the undersigned.";}else{echo "disposed of by the School.";}?><br><br>
 
 <br><br>
 
@@ -227,7 +229,7 @@ Any parts removed in the course of work on or repairs to the automobile shall be
     <tr>
       <td>PARTS:</td>
       <td>$<?php echo $parts_a?>
-      <td>$<?php echo $parts_b?>" required></td>
+      <td>$<?php echo $parts_b?></td>
     </tr>
     <tr>
       <td>LABOUR:</td>
@@ -276,7 +278,7 @@ you authorized. In either case, the repairer may not charge for any work you did
 If you have concerns about the work or repairs performed by the repairer or about your rights or duties under the
 Consumer Protection Act, 2002, (Ontario) you should contact the Ministry of Consumer and Business Services.<br><br>
 PEEL DISTRICT SCHOOL BOARD<br>
-Teacher’s Name:<?php echo $teacher?>
+Teacher’s Name:<?php echo $teacher?><br>
 I have authority to bind the Board.<br>
 E. & O. Excepted<br><br>
 ACKNOWLEDGEMENT<br>
@@ -295,4 +297,3 @@ if(isset($_POST['edit'])){
 ?>
   </body>
 </html>
-
