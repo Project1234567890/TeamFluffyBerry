@@ -8,29 +8,34 @@
   <body>
     <?php  
     $x=0;
-    $workorder= 
-    $teacher=
-    $year=
-    $make=
-    $model=
-    $vin=
-    $license=
-    $odo_intake=
-    $odo_return=
-    $description=
-    $date_return=
-    $date_author=
-    $date_complete=
-    $parts_a=
-    $parts_b=
-    $shop_a=
-    $shop_b=
-    $labour_a=
-    $labour_b=
-    $fee_a=
-    $fee_b=
-    $est_cost=
-    $total_cost=
+$sql="SELECT `id`, `work_order_num`, `invoice_num`, `invoice_date`, `model`, `make`, `year`, `vin_num`, `license_plate`, `odometer_intake`, `odometer_return`, `detailed_desc`, `authorization_date`, `completed_date`, `vehicle_return_date`, `parts_ppu`, `parts_total`, `labour_ppu`, `labour_total`, `shop_supplies_ppu`, `shop_supplies_total`, `recycle_disposal_ppu`, `recycle_disposal_total`, `estimate_authorized_cost`, `total_cost`, `teacher_first_name` FROM `FORM_B`";
+    
+    $workorder= $row['work_order_num'];
+    $teacher=$row['teacher_first_name'];
+    $year=$row['year'];
+    $make=$row['make'];
+    $model=$row['model'];
+    $vin=$row['vin_num'];
+    $license=$row['license_plate'];
+    $odo_intake=$row['odomete_intake'];
+    $odo_return=$row['odometer_return'];
+    $description=$row['detailed_desc'];
+    $date_return=$row['vehicle_return_date'];
+    $date_author=$row['authorization_date'];
+    $date_complete=$row['completed_date'];
+    $parts_a=$row['parts_ppu'];
+    $parts_b=$row['parts_total'];
+    $shop_a=$row['shop_supplies_ppu'];
+    $shop_b=$row['shop_supplies_total'];
+    $labour_a=$row['labour_ppu'];
+    $labour_b=$row['labour_total'];
+    $fee_a=$row['recycle_disposal_ppu'];
+    $fee_b=$row['recycle_disposal_total'];
+    $est_cost=$row['estimate_authorized_cost'];
+    $total_cost=$row['total_cost'];
+        
+        
+  
     $name=
     $address=
     $phone=
@@ -297,3 +302,4 @@ if(isset($_POST['edit'])){
 ?>
   </body>
 </html>
+
