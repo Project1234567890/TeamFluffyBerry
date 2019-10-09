@@ -55,6 +55,9 @@
 </head>
 <script src="include.js"></script>
 <body style="overflow-x: hidden;">
+  
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    
 <div class="TEST_OFF">
   
    <div class= "topnav"><a href="index.html"><img src="logo.png" style="height: 28px; margin: 7px;"></a></div>
@@ -137,7 +140,9 @@
     includeHTML();
 </script>
 
- </div></body>
+</div>  
+</form>
+</body>
 
 </html>
 
