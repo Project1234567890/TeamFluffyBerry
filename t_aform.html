@@ -406,7 +406,7 @@ if(isset($_POST['edit'])){
 };
 
 if ($_POST['submit']){
-     $sql="INSERT INTO 'FORM_A'('id', 'work_order_num', 'school_name', 'teacher_name', 'year', 'make', 'model', 'vin_num', 'license _plate', 'odometer', 'detailed_desc`, `parts_ppu`, `parts_total`, 'labour_ppu', 'labour_total', 'shop_supplies_ppu', 'shop_supplies_total', 'recycle_dispose_ppu', 'recycle_dispose_total', 'estimated_total_cost', 'estimate_date', 'estimate_expires_on') VALUES ('$workorder', '$school', '$teacher', '$year', '$make', '$model', '$vin', '$license', '$odometer', '$description', '$end_date', '$parts_a', '$parts_b', '$shop_a', '$shop_b', '$labour_a', '$labour_b', '$fee_a', '$fee_b', '$total_cost', '$est_date', '$expire';)"
+     $sql="INSERT INTO 'FORM_A'('work_order_num', 'school_name', 'teacher_name', 'year', 'make', 'model', 'vin_num', 'license _plate', 'odometer', 'detailed_desc`, `parts_ppu`, `parts_total`, 'labour_ppu', 'labour_total', 'shop_supplies_ppu', 'shop_supplies_total', 'recycle_dispose_ppu', 'recycle_dispose_total', 'estimated_total_cost', 'estimate_date', 'estimate_expires_on') VALUES ('$workorder', '$school', '$teacher', '$year', '$make', '$model', '$vin', '$license', '$odometer', '$description', '$end_date', '$parts_a', '$parts_b', '$shop_a', '$shop_b', '$labour_a', '$labour_b', '$fee_a', '$fee_b', '$total_cost', '$est_date', '$expire';)"
    if($conn->query($sql)==TRUE){
 
    }else{
