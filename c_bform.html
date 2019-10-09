@@ -294,12 +294,19 @@ Name: <?php echo $name?><br>
   <button>Send</button>
     </form>
   <?php  
-  };
+};
 
 if(isset($_POST['edit'])){
      $x=2;
 };
+if ($_POST['submit']){
+$sql="IINSERT INTO `FORM_B`(`first_name`, `address`, `phone`, `email`, `invoice_date`, `invoice_num`,`owner_signature`, `parts_removed`) VALUES (   '$name','$address','$phone','$email','$invoice_date','$invoice_num','$signature','$removed')";
+   if($conn->query($sql)==TRUE){
+   }else{
+     echo "Error ".$sql."<br>".$conn->error;
+   }
+}
+
 ?>
   </body>
 </html>
-
