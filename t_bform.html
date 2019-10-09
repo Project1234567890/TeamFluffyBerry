@@ -40,19 +40,18 @@ $x=0;
     FORM B<br>
 Automotive Final Invoice<br>
 (to be filled in when service complete)<br><br>
-Work Order #
-<input type="text" name="workorder" value="<?php echo $workorder?>" required><br><br>
+Work Order #: <input type="text" name="workorder" value="<?php echo $workorder?>" required><br><br>
 CUSTOMER INFORMATION<br>
   <table style="width:100%">
     <tr>
-      <td>Name:_________</td>
-      <td>Phone: _________</td>
-      <td>Address:_________</td>
+      <td>Name:___________________</td>
+      <td>Phone: ___________________</td>
+      <td>Address:___________________</td>
     </tr>
     <tr>
-      <td>Email:_________</td>
-      <td>Invoice #:_________</td>
-      <td>Date of Invoice:_________</td>
+      <td>Email:___________________</td>
+      <td>Invoice #:___________________</td>
+      <td>Date of Invoice:___________________</td>
     </tr>
   </table>
 <br>
@@ -60,15 +59,15 @@ AUTOMOBILE REPAIRED<br>
 
   <table style="width:100%">
     <tr>
-      <td>Year:<input type="text" name="year" value="<?php echo $year?>" required></td>
+      <td>Year: <input type="text" name="year" value="<?php echo $year?>" required></td>
       <td>VIN #: <input type="text" name="vin" value="<?php echo $vin?>" required></td>
-      <td>Make:<input type="text" name="make" value="<?php echo $make?>" required></td>
-      <td>Model:<input type="text" name="model" value="<?php echo $model?>" required></td>
+      <td>Make: <input type="text" name="make" value="<?php echo $make?>" required></td>
+      <td>Model: <input type="text" name="model" value="<?php echo $model?>" required></td>
     </tr>
     <tr>
-      <td>License Plate:<input type="text" name="license" value="<?php echo $license?>" required></td>
-      <td>Odometer reading on intake:<input type="text" name="odo_intake" value="<?php echo $odo_intake?>" required></td>
-      <td>Odometer reading on return:<input type="text" name="odo_return" value="<?php echo $odo_return?>" required></td>
+      <td>License Plate: <input type="text" name="license" value="<?php echo $license?>" required></td>
+      <td>Odometer reading on intake: <input type="text" name="odo_intake" value="<?php echo $odo_intake?>" required></td>
+      <td>Odometer reading on return: <input type="text" name="odo_return" value="<?php echo $odo_return?>" required></td>
     </tr>
   </table>
 <br>
@@ -76,7 +75,7 @@ Detailed description of work performed, parts (including whether each part is a 
 original equipment manufacturer, a new part not provided by the original equipment manufacturer, a used
 part or a reconditioned part) shop materials, environmental related, fees, disposal/recycling fees, etc.:<br><textarea name="description" value="<?php echo $workorder?>" rows="5" cols="40"required></textarea><br><br>
 Date of authorization of work: <input type="text" name="date_author" value="<?php echo $date_author?>" required><br><br>
-Date of completion of work:<input type="text" name="date_complete" value="<?php echo $date_complete?>" required><br><br>
+Date of completion of work: <input type="text" name="date_complete" value="<?php echo $date_complete?>" required><br><br>
 Date of return of vehicle: <input type="text" name="date_return" value="<?php echo $date_return?>" required><br><br>
 Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br>
 (A) returned to the undersigned ______; or (B) disposed of by the Board_______
@@ -142,13 +141,13 @@ you authorized. In either case, the repairer may not charge for any work you did
 If you have concerns about the work or repairs performed by the repairer or about your rights or duties under the
 Consumer Protection Act, 2002, (Ontario) you should contact the Ministry of Consumer and Business Services.<br><br>
 PEEL DISTRICT SCHOOL BOARD<br>
-Teacher’s Name:<input type="text" name="teacher" value="<?php echo $teacher?>" required><br>
+Teacher’s Name: <input type="text" name="teacher" value="<?php echo $teacher?>" required><br>
 I have authority to bind the Board.<br>
 E. & O. Excepted<br><br>
 ACKNOWLEDGEMENT<br>
 The foregoing is acknowledged and accepted by the undersigned.<br><br>
-Signature of Registered Owner: _________________________________________<br><br>
-Name: ____________________________________<br><br>
+Signature of Registered Owner: ___________________<br><br>
+Name: ___________________<br><br>
     
     <input type="submit" name="submit" value="Submit">
 
@@ -186,19 +185,18 @@ Name: ____________________________________<br><br>
     FORM B<br>
 Automotive Final Invoice<br>
 (to be filled in when service complete)<br><br>
-Work Order #
-<?php echo $workorder?><br><br>
+Work Order #: <?php echo $workorder?><br><br>
 CUSTOMER INFORMATION<br>
   <table style="width:100%">
     <tr>
-      <td>Name:_________</td>
-      <td>Phone: _________</td>
-      <td>Address:_________</td>
+      <td>Name:___________________</td>
+      <td>Phone: ___________________</td>
+      <td>Address:___________________</td>
     </tr>
     <tr>
-      <td>Email:_________</td>
-      <td>Invoice #:_________</td>
-      <td>Date of Invoice:_________</td>
+      <td>Email:___________________</td>
+      <td>Invoice #:___________________</td>
+      <td>Date of Invoice:___________________</td>
     </tr>
   </table>
 <br>
@@ -206,15 +204,15 @@ AUTOMOBILE REPAIRED<br>
 
   <table style="width:100%">
     <tr>
-      <td>Year:<?php echo $year?></td>
-      <td>VIN #: <?php echo $vin?></td>
-      <td>Make:<?php echo $make?></td>
-      <td>Model:<?php echo $model?></td>
+      <td>Year:<br> <?php echo $year?></td>
+      <td>VIN #:<br> <?php echo $vin?></td>
+      <td>Make:<br> <?php echo $make?></td>
+      <td>Model:<br> <?php echo $model?></td>
     </tr>
     <tr>
-      <td>License Plate:<?php echo $license?></td>
-      <td>Odometer reading on intake:<?php echo $odo_intake?></td>
-      <td>Odometer reading on return:<?php echo $odo_return?></td>
+      <td>License Plate:<br> <?php echo $license?></td>
+      <td>Odometer reading on intake:<br> <?php echo $odo_intake?></td>
+      <td>Odometer reading on return:<br> <?php echo $odo_return?></td>
     </tr>
   </table>
 <br>
@@ -222,7 +220,7 @@ Detailed description of work performed, parts (including whether each part is a 
 original equipment manufacturer, a new part not provided by the original equipment manufacturer, a used
 part or a reconditioned part) shop materials, environmental related, fees, disposal/recycling fees, etc.:<br><?php echo $workorder?><br><br>
 Date of authorization of work: <?php echo $date_author?><br><br>
-Date of completion of work:<?php echo $date_complete?><br><br>
+Date of completion of work: <?php echo $date_complete?><br><br>
 Date of return of vehicle: <?php echo $date_return?><br><br>
 Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br>
 (A) returned to the undersigned ______; or (B) disposed of by the Board_______
@@ -288,13 +286,13 @@ you authorized. In either case, the repairer may not charge for any work you did
 If you have concerns about the work or repairs performed by the repairer or about your rights or duties under the
 Consumer Protection Act, 2002, (Ontario) you should contact the Ministry of Consumer and Business Services.<br><br>
 PEEL DISTRICT SCHOOL BOARD<br>
-Teacher’s Name:<?php echo $teacher?><br>
+Teacher’s Name: <?php echo $teacher?><br>
 I have authority to bind the Board.<br>
 E. & O. Excepted<br><br>
 ACKNOWLEDGEMENT<br>
 The foregoing is acknowledged and accepted by the undersigned.<br><br>
-Signature of Registered Owner: _________________________________________<br><br>
-Name: ____________________________________<br><br>
+Signature of Registered Owner: ___________________<br><br>
+Name: ___________________<br><br>
     
       <input type="submit" name="edit" value="Change">
   <button>Send</button>
