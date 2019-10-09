@@ -21,9 +21,9 @@ body {
   float: left;
   color: rgb(73, 95, 150);
   text-align: center;
-  padding: 14px;
+  padding: 1vw;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.5vw;
 }
 
 .left a {
@@ -44,22 +44,23 @@ h1{
   color: gold;
   padding-left: 4%;
   margin-top: 6vw;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.733);
 }
 
 .subhead{
   font-size:2.5vw;
   color:gold;
   margin: 5%;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.788);
 }
 
 .body{
   font-size:1.75vw;
   color:gold;
-  margin-top: 12vw;
+  margin-top: 10vw;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
-
 }
 
 .body2{
@@ -92,12 +93,79 @@ h1{
   visibility: visible;
 }
 
-.line {
-  background-color: gold;
-  width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 320px
-  color: gold;
-  font-size: 7px;
+/*.anim1 {
+  -webkit-animation-name: example; // Safari 4.0 - 8.0 
+  -webkit-animation-duration: 2s; 
+  animation-name: example;
+  animation-duration: 2s;
 }
+
+// Safari 4.0 - 8.0 
+@-webkit-keyframes example {
+  from {font-size: 2vw;}
+  to {font-size: 5.7vw;}
+}
+
+// Standard syntax 
+@keyframes example {
+  from {font-size: 2vw;}
+  to {font-size: 5.7vw;}
+}
+
+.anim2 {
+  -webkit-animation-name: example1; // Safari 4.0 - 8.0 
+  -webkit-animation-duration: 2s; // Safari 4.0 - 8.0 
+  animation-name: example1;
+  animation-duration: 2s;
+}
+
+// Safari 4.0 - 8.0 
+@-webkit-keyframes example1 {
+  from {width: 30%;}
+  to {width: 80%;}
+}
+
+// Standard syntax 
+@keyframes example1 {
+   from {width: 30%;}
+  to {width: 80%;}
+}
+
+.anim3 {
+  -webkit-animation-name: example2; // Safari 4.0 - 8.0 
+  -webkit-animation-duration: 2s; // Safari 4.0 - 8.0 
+  animation-name: example2;
+  animation-duration: 2s;
+}
+
+// Safari 4.0 - 8.0 
+@-webkit-keyframes example2 {
+   from {font-size: 1vw;}
+  to {font-size: 2.5vw;}
+}
+
+// Standard syntax 
+@keyframes example2 {
+  from {font-size: 1vw;}
+  to {font-size: 2.5vw;}
+}
+
+.anim4 {
+  -webkit-animation-name: example3; // Safari 4.0 - 8.0 
+  -webkit-animation-duration: 2s; // Safari 4.0 - 8.0 
+  animation-name: example3;
+  animation-duration: 2s;
+}
+
+// Safari 4.0 - 8.0 
+@-webkit-keyframes example3 {
+   from {font-size:1.75vw; margin-top: 25vw;}
+  to {font-size:1.75vw; margin-top: 10vw;}
+}
+
+// Standard syntax 
+@keyframes example3 {
+  from {font-size:1.75vw; margin-top: 25vw;}
+  to {font-size:1.75vw; margin-top: 10vw;}
+}
+*/
