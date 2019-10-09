@@ -7,7 +7,6 @@
   </head>
   <body>
     <script src="include.js"></script>
-
     
     <div w3-include-html="t_nav.html"></div>
 
@@ -51,13 +50,13 @@ if($x==0){
   School Name and Address:
   <input type="text" name="school" value="<?php echo $workorder?>"required><br>
   (hereinafter "the School”)<br><br>
-  Teacher:<input type="text" name="teacher" value="<?php echo $workorder?>"required><br><br>
+  Teacher: <input type="text" name="teacher" value="<?php echo $workorder?>"required><br><br>
   AUTOMOBILE TO BE REPAIRED<br>
   <table style="width:100%">
     <tr>
-      <td>Year:<input type="text" name="year" value="<?php echo $workorder?>"required></td>
+      <td>Year: <input type="text" name="year" value="<?php echo $workorder?>"required></td>
       <td>Make: <input type="text" name="make" value="<?php echo $workorder?>"required></td>
-      <td>Model:<input type="text" name="model" value="<?php echo $workorder?>"required></td>
+      <td>Model: <input type="text" name="model" value="<?php echo $workorder?>"required></td>
     </tr>
     <tr>
       <td>VIN #:<input type="text" name="vin" value="<?php echo $workorder?>"required></td>
@@ -111,8 +110,8 @@ if($x==0){
   <br><br>
   The Board agrees that it will not charge the undersigned an amount that exceeds the Total
   Estimated Cost by more than 10 per cent.<br>
-  Date of estimate:<input type="text" name="est_date" value="<?php echo $est_date?>"required><br>
-  This estimate expires on:<input type="text" name="expire" value="<?php echo $expire?>"required><br><br>
+  Date of estimate: <input type="text" name="est_date" value="<?php echo $est_date?>"required><br>
+  This estimate expires on: <input type="text" name="expire" value="<?php echo $expire?>"required><br><br>
   Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned _______
   ; or (B) disposed of by the School _______<br><br>
 
@@ -139,16 +138,16 @@ if($x==0){
   automobile rests solely with me.<br>
   &emsp;· I may decline the estimated amount above and instead authorize the Board to perform the work
   outlined at a cost not to exceed $___________________, by initialing
-  here:_____________________.<br><br>
+  here:___________________.<br><br>
   <table style="width:100%">
     <tr>
-      <td>Name:_____</td>
-      <td>Phone: __________</td>
-      <td>Address:____________</td>
+      <td>Name:___________________</td>
+      <td>Phone: ___________________</td>
+      <td>Address:___________________</td>
     </tr>
     <tr>
-      <td>Email:______________</td>
-      <td>Date:_________________</td>
+      <td>Email:___________________</td>
+      <td>Date:___________________</td>
     </tr>
   </table><br><br>
 
@@ -159,7 +158,7 @@ if($x==0){
 
   Automotive Repair Waiver<br>
   Work Order #
-  _______________<br><br>
+  ___________________<br><br>
   AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT<br>
   *Schools must retain form for 3 years*<br>
   WARNING: BY SIGNING THIS AGREEMENT YOU GIVE UP YOUR RIGHT TO BRING A COURT ACTION TO RECOVER
@@ -187,7 +186,7 @@ if($x==0){
   and release is to cover any and all eventualities whether foreseeable or not.<br>
  &emsp; 2. Despite the above-mentioned risks and hazards, the undersigned freely and voluntarily assume such risks and
   hazards inherent in allowing untrained students to work on the undersigned’ automobile at the School.<br>
-  ____________<br>
+  ___________________<br>
   (Initial)<br><br>
   RELEASE AND WAIVER OF LIABILITY<br>
  &emsp; 1. In consideration of the work to be done on the undersigned’s automobile, which will be done by untrained students
@@ -202,8 +201,8 @@ if($x==0){
   Agreement, having taken specific note of the warning stated above, and intend to be legally bound to the contents of
   this Agreement in so signing it on this ___ day of __________________ , 20___.<br>
  &emsp; 3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
-  Signature of Registered Owner: ___________________________<br><br>
-  Name : ___________________________________<br><br>
+  Signature of Registered Owner: ___________________<br><br>
+  Name : ___________________<br><br>
   <input type="submit" name="submit" value="Submit">
 
 </form>
@@ -232,7 +231,6 @@ if($x==0){
     $est_date = $_POST['est_date'];
     $expire = $_POST['expire'];
       
-
 ?>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 FORM A<br>
@@ -244,18 +242,18 @@ FORM A<br>
   School Name and Address:
   <?php echo $school ?><br>
   (hereinafter "the School”)<br><br>
-  Teacher:<?php echo $teacher ?><br><br>
+  Teacher: <?php echo $teacher ?><br><br>
   AUTOMOBILE TO BE REPAIRED<br>
   <table style="width:100%">
     <tr>
-      <td>Year:<?php echo $year ?></td>
+      <td>Year: <?php echo $year ?></td>
       <td>Make: <?php echo $make ?></td>
-      <td>Model:<?php echo $model ?></td>
+      <td>Model: <?php echo $model ?></td>
     </tr>
     <tr>
-      <td>VIN #:<?php echo $vin ?></td>
-      <td>License Plate:<?php echo $license ?></td>
-      <td>Odometer:<?php echo $odometer ?></td>
+      <td>VIN #: <?php echo $vin ?></td>
+      <td>License Plate: <?php echo $license ?></td>
+      <td>Odometer: <?php echo $odometer ?></td>
     </tr>
   </table>
   <br><br>
@@ -265,7 +263,7 @@ FORM A<br>
   disposal/recycling fees, etc.:<br><br>
   <?php echo  $description ?>
   <br><br>
-  Date on which the work shall be completed:<?php echo $end_date ?><br><br>
+  Date on which the work shall be completed: <?php echo $end_date ?><br><br>
 
 
   <table style="width:100%">
@@ -304,8 +302,8 @@ FORM A<br>
   <br><br>
   The Board agrees that it will not charge the undersigned an amount that exceeds the Total
   Estimated Cost by more than 10 per cent.<br>
-  Date of estimate:<?php echo $est_date ?><br>
-  This estimate expires on:<?php echo $expire ?><br><br>
+  Date of estimate: <?php echo $est_date ?><br>
+  This estimate expires on: <?php echo $expire ?><br><br>
   Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned ______
   ; or (B) disposed of by the School _____<br><br>
 
@@ -332,16 +330,16 @@ FORM A<br>
   automobile rests solely with me.<br>
  &emsp; · I may decline the estimated amount above and instead authorize the Board to perform the work
   outlined at a cost not to exceed $___________________, by initialing
-  here:_____________________.<br><br>
+  here:___________________.<br><br>
   <table style="width:100%">
     <tr>
-      <td>Name:_____</td>
-      <td>Phone: __________</td>
-      <td>Address:____________</td>
+      <td>Name:___________________</td>
+      <td>Phone: ___________________</td>
+      <td>Address:___________________</td>
     </tr>
     <tr>
-      <td>Email:______________</td>
-      <td>Date:_________________</td>
+      <td>Email:___________________</td>
+      <td>Date:___________________</td>
     </tr>
   </table><br><br>
 
@@ -380,7 +378,7 @@ FORM A<br>
   and release is to cover any and all eventualities whether foreseeable or not.<br>
   &emsp;2. Despite the above-mentioned risks and hazards, the undersigned freely and voluntarily assume such risks and
   hazards inherent in allowing untrained students to work on the undersigned’ automobile at the School.<br>
-  ____________<br>
+  ___________________<br>
   (Initial)<br><br>
   RELEASE AND WAIVER OF LIABILITY<br>
   &emsp;1. In consideration of the work to be done on the undersigned’s automobile, which will be done by untrained students
@@ -395,8 +393,8 @@ FORM A<br>
   Agreement, having taken specific note of the warning stated above, and intend to be legally bound to the contents of
   this Agreement in so signing it on this ___ day of __________________ , 20___.<br>
   &emsp;3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
-  Signature of Registered Owner: ___________________________<br><br>
-  Name : ___________________________________<br><br>
+  Signature of Registered Owner: ___________________<br><br>
+  Name : ___________________<br><br>
   <input type="submit" name="edit" value="Change">
   <button>Send</button>
     </form>
