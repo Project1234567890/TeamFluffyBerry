@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +7,12 @@
   <link href="page.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <?php  
+    <script src="include.js"></script>
+    
+    <div w3-include-html="t_nav.html"></div>
+
+<?php
+include "connectdb.php";
 $x=0;
     $workorder= 
     $teacher=
@@ -303,6 +309,18 @@ Name: ___________________<br><br>
 if(isset($_POST['edit'])){
      $x=2;
 };
+if ($_POST['submit']){ //NOT DONE NEED TO FIX
+     $sql="INSERT INTO 'FORM_B'('work_order_num', 'school_name', 'teacher_name', 'year', 'make', 'model', 'vin_num', 
+'license _plate', 'odometer', 'detailed_desc`, `parts_ppu`, `parts_total`, 'labour_ppu', 'labour_total', 'shop_supplies_ppu', 
+'shop_supplies_total', 'recycle_dispose_ppu', 'recycle_dispose_total', 'estimated_total_cost', 'estimate_date', 'estimate_expires_on') 
+VALUES ('$workorder', '$school', '$teacher', '$year', '$make', '$model', '$vin', '$license', '$odo_intake', 'odo_return', '$description', '$parts_a', '$parts_b', '$shop_a', '$shop_b', '$labour_a', '$labour_b', '$fee_a', '$fee_b', '$total_cost', '$est_date', '$expire';)"
+   if($conn->query($sql)==TRUE){
+
+   }else{
+     echo "Error ".$sql."<br>".$conn->error;
+   }
+}
+
 ?>
   </body>
 </html>
