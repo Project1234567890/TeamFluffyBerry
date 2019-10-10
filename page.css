@@ -115,7 +115,7 @@ form{
   top: 0px;
 }
 
-.gold_Line {
+div {
   font-size:2vw;
   color:black;
   background-color: white;
@@ -123,6 +123,8 @@ form{
   border-bottom: 0.5vw solid gold;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
+
+
 
 .firstbock {
   background-color: rgb(66, 56, 207);
