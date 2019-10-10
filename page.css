@@ -120,6 +120,9 @@ div {
   color:black;
   background-color: white;
   padding: 5%;
+}
+
+.gold_line {
   border-bottom: 0.5vw solid gold;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
