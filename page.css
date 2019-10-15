@@ -46,7 +46,7 @@ h1{
   margin: 5% 3%;
   margin-bottom: 
   border-radius: 1.5vw;
-  padding: 1%;
+  padding: 0%; /*Cancels the padding innherited from div*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   border-bottom: 0.5vw solid gold;
 
