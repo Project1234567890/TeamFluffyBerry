@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(73, 95, 150);
-  background-image: url("carrepair.jpg") ;
+  font-family: 'Bai Jamjuree';
+  background-color: white;
+  //background-image: url("carrepair.jpg"), url("https://i.ytimg.com/vi/mRwjHwva6SY/maxresdefault.jpg");
     background-repeat: no-repeat;
   background-size: 100%;
   background-position: center top;
@@ -10,162 +10,127 @@ body {
 
 .banner {
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.712);
-  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+  background-color: white;
+  box-shadow: 0 0.5vw 1vw 0 rgba(0, 0, 0, 0.02), 0 0.75vw 2.5vw 0 rgba(0, 0, 0, 0.02);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 100%;
+  width: calc(100% - 2vw);
+  padding: 1vw;
+  margin-bottom: 4vw;
 }
+
 .banner a {
   float: left;
-  color: rgb(73, 95, 150);
+  color: black;
   text-align: center;
-  padding: 1vw;
+  padding: 1.5vw;
   text-decoration: none;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 .left a {
- background-color: rgb(73, 95, 150);
+ background-color: rgb(84, 121, 216);
   padding: 14px;
 }
 
-.banner a:hover {
-  background-color: rgb(73, 95, 150);
-   color: gold;
-}
+/*.banner a:hover {
+  background-color: rgb(0, 0, 0);
+   color: white;
+
+}*/
 
 .banner a.active {
-  color: gold;
+  color: black;
 }
 h1{
-  font-size: 5.7vw;
-  color: gold;
-  padding-left: 4%;
-  margin-top: 6vw;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.733);
+  font-size: 5vw;
+  color: rgb(167, 167, 167);
+  padding: 4%;
+  margin-bottom: 10%;
+  margin-top: -13%;
+  padding-left: 7vw;
+  font-weight: bolder;
 }
 
 .subhead{
-  font-size:2.5vw;
-  color:gold;
-  margin: 5%;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.788);
+  font-size: 1.5vw;
+  color:rgb(0, 0, 0);
+  width: 30%;
+  font-weight: lighter;
+  text-align: left;
+  line-height: 1.8;
+   letter-spacing: 0.2vw;
+   padding-left: 1vw;
+  //text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.788);
 }
 
-.body{
+/*.body {
+    background-image: url("carrepair.jpg");
+      height: 35vw;
+    margin-top: 10vw;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+*/
+.body1{
   font-size:1.75vw;
-  color:gold;
-  margin-top: 10vw;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%;
+  color:white;
+  padding: 5vw;
+  background-color: rgba(0, 0, 0, 0.596);
+margin-top: 22%;
+margin-left: 15%;
+margin-right: 15%;
+margin-bottom: 14vw;
+line-height: 1.4;
+   letter-spacing: 0.2vw;
+   text-align: justify;
 }
 
 .body2{
   font-size:1.5vw;
-  color:gold;
+  color:black;
+  padding: 5vw;
+  background-color: white;
+  line-height: 1.5;
+   letter-spacing: 0vw;
+   text-align: left;
+   width: 35%;
+   margin-bottom: 5vw;
+   height: 40.95vw;
+
 }
 
-
-.tooltip {
-  position: relative;
-  display: inline-block;
+.body3{
+  font-size:1.5vw;
+  color:white;
+  padding: 5vw;
+  background-color: #071970;
+    line-height: 1.5;
+   letter-spacing: 0vw;
+   text-align: left;
+   width: 35%;
+   margin-bottom: 5vw;
+   margin-left: calc(65% - 10vw);
+   height: 44vw;
 }
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: rgba(0, 0, 0, 0.726);
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  font-size: 10px;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
+.body4{
+  font-size:1.5vw;
+  color:black;
+  padding: 5vw;
+  margin-top: -2.5vw;
+  background-color: white;
+  line-height: 1.5;
+   letter-spacing: 0vw;
+   text-align: left;
+   width: 37%;
+   margin-bottom: 10vw;
+   height: 42vw;
 }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.white {
+  background-color: white;
+margin-bottom: 15%;
 }
-
-/*.anim1 {
-  -webkit-animation-name: example; // Safari 4.0 - 8.0 
-  -webkit-animation-duration: 2s; 
-  animation-name: example;
-  animation-duration: 2s;
-}
-
-// Safari 4.0 - 8.0 
-@-webkit-keyframes example {
-  from {font-size: 2vw;}
-  to {font-size: 5.7vw;}
-}
-
-// Standard syntax 
-@keyframes example {
-  from {font-size: 2vw;}
-  to {font-size: 5.7vw;}
-}
-
-.anim2 {
-  -webkit-animation-name: example1; // Safari 4.0 - 8.0 
-  -webkit-animation-duration: 2s; // Safari 4.0 - 8.0 
-  animation-name: example1;
-  animation-duration: 2s;
-}
-
-// Safari 4.0 - 8.0 
-@-webkit-keyframes example1 {
-  from {width: 30%;}
-  to {width: 80%;}
-}
-
-// Standard syntax 
-@keyframes example1 {
-   from {width: 30%;}
-  to {width: 80%;}
-}
-
-.anim3 {
-  -webkit-animation-name: example2; // Safari 4.0 - 8.0 
-  -webkit-animation-duration: 2s; // Safari 4.0 - 8.0 
-  animation-name: example2;
-  animation-duration: 2s;
-}
-
-// Safari 4.0 - 8.0 
-@-webkit-keyframes example2 {
-   from {font-size: 1vw;}
-  to {font-size: 2.5vw;}
-}
-
-// Standard syntax 
-@keyframes example2 {
-  from {font-size: 1vw;}
-  to {font-size: 2.5vw;}
-}
-
-.anim4 {
-  -webkit-animation-name: example3; // Safari 4.0 - 8.0 
-  -webkit-animation-duration: 2s; // Safari 4.0 - 8.0 
-  animation-name: example3;
-  animation-duration: 2s;
-}
-
-// Safari 4.0 - 8.0 
-@-webkit-keyframes example3 {
-   from {font-size:1.75vw; margin-top: 25vw;}
-  to {font-size:1.75vw; margin-top: 10vw;}
-}
-
-// Standard syntax 
-@keyframes example3 {
-  from {font-size:1.75vw; margin-top: 25vw;}
-  to {font-size:1.75vw; margin-top: 10vw;}
-}
-*/
