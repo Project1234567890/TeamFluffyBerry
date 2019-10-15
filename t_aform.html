@@ -6,14 +6,11 @@
   <link href="page.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <script src="include.js"></script>
-    
-    <div w3-include-html="t_nav.html"></div>
 
 <?php
 include "connectdb.php";
-$x=0;
-if($x==0){
+include "t_nav.html";
+
     $workorder= $school= $teacher=
     $year=
     $make=
@@ -34,176 +31,114 @@ if($x==0){
     $total_cost=
     $est_date=
     $expire =null;
-}
 
-  if (!isset($_POST['submit']) or $x==2){
-      
+
+  if (!isset($_POST['submit'])){
+
 ?>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  
-    FORM A<br>
+<form method="post" action="<?php echo
+htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+  FORM A<br>
   Automotive Intake Repair Form<br>
   (including all motorized vehicles and equipment)<br><br>
-  Work Order #
-  <input type="text" name="workorder" value="<?php echo $workorder?>" required><br><br>
+  Work Order #:
+  <input type="text" name="workorder" value="<?php echo $workorder?>"
+required><br><br>
   SCHOOL INFORMATION<br>
   School Name and Address:
-  <input type="text" name="school" value="<?php echo $workorder?>"required><br>
-  (hereinafter "the School”)<br><br>
-  Teacher: <input type="text" name="teacher" value="<?php echo $workorder?>"required><br><br>
+  <input type="text" name="school" value="<?php echo $school?>"required><br>
+  (hereinafter "the School")<br><br>
+  Teacher: <input type="text" name="teacher" value="<?php echo
+$teacher?>"required><br><br>
   AUTOMOBILE TO BE REPAIRED<br>
   <table style="width:100%">
     <tr>
-      <td>Year: <input type="text" name="year" value="<?php echo $workorder?>"required></td>
-      <td>Make: <input type="text" name="make" value="<?php echo $workorder?>"required></td>
-      <td>Model: <input type="text" name="model" value="<?php echo $workorder?>"required></td>
+      <td>Year: <input type="text" name="year" value="<?php echo
+$year?>"required></td>
+      <td>Make: <input type="text" name="make" value="<?php echo
+$make?>"required></td>
+      <td>Model: <input type="text" name="model" value="<?php echo
+$model?>"required></td>
     </tr>
     <tr>
-      <td>VIN #:<input type="text" name="vin" value="<?php echo $workorder?>"required></td>
-      <td>License Plate:<input type="text" name="license" value="<?php echo $workorder?>"required></td>
-      <td>Odometer:<input type="text" name="odometer" value="<?php echo $workorder?>"required></td>
+      <td>VIN #:<input type="text" name="vin" value="<?php echo
+$vin?>"required></td>
+      <td>License Plate:<input type="text" name="license" value="<?php
+echo $license?>"required></td>
+      <td>Odometer:<input type="text" name="odometer" value="<?php
+echo $odometer?>"required></td>
     </tr>
   </table>
   <br><br>
-  Detailed description of work to be performed including anticipated parts (including whether each part is a
-  new part provided by the original equipment manufacturer, a new part not provided by the original
-  equipment manufacturer, a used part or a reconditioned part) shop materials, environmental related, fees,
+  Detailed description of work to be performed including anticipated
+parts (including whether each part is a
+  new part provided by the original equipment manufacturer, a new part
+not provided by the original
+  equipment manufacturer, a used part or a reconditioned part) shop
+materials, environmental related, fees,
   disposal/recycling fees, etc.:<br><br>
-  <textarea name="description" value="<?php echo $workorder?>" rows="5" cols="40"required></textarea>
+  <textarea name="description" value="<?php echo $description?>"
+rows="5" cols="40"required></textarea>
   <br><br>
-  Date on which the work shall be completed:<input type="text" name="end_date" value="<?php echo $workorder?>"required><br><br>
+  Date on which the work shall be completed:<input type="date"
+name="end_date" value="<?php echo $end_date?>" min= "<?php
+date('Y-m-d');?>" placeholder="YYYY-MM-DD"required><br><br>
 
 
   <table style="width:100%">
     <tr>
       <th>TOTAL ESTIMATED COST</th>
-      <th>Price Per Unit</th> 
+      <th>Price Per Unit</th>
       <th>Line Total</th>
     </tr>
-  
+
     <tr>
       <td>PARTS:</td>
-      <td>$<input type="text" name="parts_a" value="<?php echo $parts_a?>"required></td>
-      <td>$<input type="text" name="parts_b" value="<?php echo $parts_b?>"required></td>
+      <td>$<input type="text" name="parts_a" value="<?php echo
+$parts_a?>"required></td>
+      <td>$<input type="text" name="parts_b" value="<?php echo
+$parts_b?>"required></td>
     </tr>
     <tr>
       <td>LABOUR:</td>
-      <td>$<input type="text" name="labour_a" value="<?php echo $labour_a?>"required></td>
-      <td>$<input type="text" name="labour_b" value="<?php echo $labour_b?>"required></td>
+      <td>$<input type="text" name="labour_a" value="<?php echo
+$labour_a?>"required></td>
+      <td>$<input type="text" name="labour_b" value="<?php echo
+$labour_b?>"required></td>
       </tr>
         <tr>
       <td>SHOP SUPPLIES:</td>
-      <td>$<input type="text" name="shop_a" value="<?php echo $shop_a?>"required></td>
-      <td>$<input type="text" name="shop_b" value="<?php echo $shop_b?>"required></td>
+      <td>$<input type="text" name="shop_a" value="<?php echo
+$shop_a?>"required></td>
+      <td>$<input type="text" name="shop_b" value="<?php echo
+$shop_b?>"required></td>
       </tr>
       <tr>
       <td>RECYCLING/ DISPOSAL FEE:</td>
-      <td>$<input type="text" name="fee_a" value="<?php echo $fee_a?>"required></td>
-      <td>$<input type="text" name="fee_b" value="<?php echo $fee_b?>"required></td>
+      <td>$<input type="text" name="fee_a" value="<?php echo
+$fee_a?>"required></td>
+      <td>$<input type="text" name="fee_b" value="<?php echo
+$fee_b?>"required></td>
       </tr>
       <tr>
       <td>TOTAL ESTIMATED COST:</td>
       <td></td>
-      <td>$<input type="text" name="total_cost" value="<?php echo $total_cost?>"required></td>
+      <td>$<input type="text" name="total_cost" value="<?php echo
+$total_cost?>" required></td>
       </tr>
   </table>
   <br><br>
-  The Board agrees that it will not charge the undersigned an amount that exceeds the Total
+  The Board agrees that it will not charge the undersigned an amount
+that exceeds the Total
   Estimated Cost by more than 10 per cent.<br>
-  Date of estimate: <input type="text" name="est_date" value="<?php echo $est_date?>"required><br>
-  This estimate expires on: <input type="text" name="expire" value="<?php echo $expire?>"required><br><br>
-  Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned _______
-  ; or (B) disposed of by the School _______<br><br>
-
-  WAIVER AND RELEASE OF LIABILITY<br>
-  &emsp;· I agree to release and hold the Peel District School Board (the “Board”), its trustees, officers, agents,
-  volunteers, students and insurers and their respective heirs, executors, personal representatives,
-  successors and assigns (the “Indemnified Parties”) harmless and to indemnify them from and
-  against all actions, damages, claims and demands which may be brought against the Indemnified
-  Parties by or on behalf of the undersigned or any third party in respect of or arising out of the
-  vehicle being in the possession of the Board, or out of any accidents which may result in injury or
-  death of person or damage to or loss of property belonging to any person if such action depends in
-  any way, in whole or in part on work having been performed on the vehicle by students of the
-  Board.<br>
-  &emsp;· I agree to pay for all labour, parts, materials, supplies, environmental fees, disposal and recycling
-  fees of all kinds, required to perform the work described above. Final payment is due when the
-  work is completed.<br>
-  &emsp;· I understand that if my automobile is not claimed by me within THIRTY (30) days after notice of
-  completion of work, whether or not I have actually received notice, the automobile and all property
-  therein or thereon will be deemed abandoned and disposed of as considered appropriate in the sole
-  discretion of the Board with the entire proceeds from such disposal belonging to the Board as
-  beneficial owner and not as a trustee for its own use absolutely.<br>
- &emsp; · I agree that any notice may be adequately given by prepaid post to the address below. I agree that
-  the onus of keeping up to date at all times as to the progress of and cost of the repairs to the
-  automobile rests solely with me.<br>
-  &emsp;· I may decline the estimated amount above and instead authorize the Board to perform the work
-  outlined at a cost not to exceed $___________________, by initialing
-  here:___________________.<br><br>
-  <table style="width:100%">
-    <tr>
-      <td>Name:___________________</td>
-      <td>Phone: ___________________</td>
-      <td>Address:___________________</td>
-    </tr>
-    <tr>
-      <td>Email:___________________</td>
-      <td>Date:___________________</td>
-    </tr>
-  </table><br><br>
-
-
-  Please proceed to the
-  AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT
-  <br><br>
-
-  Automotive Repair Waiver<br>
-  Work Order #
-  ___________________<br><br>
-  AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT<br>
-  *Schools must retain form for 3 years*<br>
-  WARNING: BY SIGNING THIS AGREEMENT YOU GIVE UP YOUR RIGHT TO BRING A COURT ACTION TO RECOVER
-  COMPENSATION FOR ANY INJURY OR DEATH TO YOU OR OTHERS AND FOR DAMAGE TO YOUR
-  PROPERTY ARISING DIRECTLY, INDIRECTLY OR CONSEQUENTIALLY FROM OR RELATED TO YOUR CHOICE
-  TO HAVE UNTRAINED STUDENTS WORK ON YOUR AUTOMOBILE.<br>
-  PRELIMINARY UNDERSTANDING<br>
- &emsp; 1. The undersigned acknowledges and agrees that while the undersigned’s automobile and all property located in or
-  on the automobile is located at the School, whether indoors or outside, that the undersigned assumes all risk
-  of loss or damage to the automobile and the said property and further agree that:<br>
-  &emsp;&emsp;(a) The undersigned is aware that untrained students will perform work on our automobile and that
-  allowing untrained students to do so has inherent risks and hazards, which the undersigned voluntarily
-  assumes; and<br>
-  &emsp;&emsp;(b) The undersigned has full knowledge of the nature and extent of the risks associated with allowing
-  untrained students to work on the undersigned’s automobile, the particulars of which include but are
-  not limited to:<br>
-  &emsp;&emsp;&emsp;· damage to or destruction of the automobile or any of its component parts, which damage or
-  destruction will not be repaired except at my full cost and expense;<br>
- &emsp;&emsp;&emsp; · return of the automobile in an unsafe and un-road worthy condition;<br>
-  &emsp;&emsp;&emsp;· death or personal injury to the undersigned or others from operation of the automobile following
-  work being done on it by untrained students; and<br>
-  &emsp;&emsp;(c) The undersigned agrees that there may be unforeseen and unforeseeable risks associated with the
-  undersigned’s choice to have untrained students work on the undersigned’s automobile and those risks
-  although not foreseen or foreseeable are accepted, it being understood that the intent of this waiver
-  and release is to cover any and all eventualities whether foreseeable or not.<br>
- &emsp; 2. Despite the above-mentioned risks and hazards, the undersigned freely and voluntarily assume such risks and
-  hazards inherent in allowing untrained students to work on the undersigned’ automobile at the School.<br>
-  ___________________<br>
-  (Initial)<br><br>
-  RELEASE AND WAIVER OF LIABILITY<br>
- &emsp; 1. In consideration of the work to be done on the undersigned’s automobile, which will be done by untrained students
-  of the Board, whether the work occurs during school hours, after school hours, or at any other time, the undersigned,
-  as the owner(s) of the automobile described on the attached Repair Work Order Form agree to release, indemnify
-  and save harmless the Indemnified Parties and each of them against and from all actions damages, claims and
-  demands which may be brought against the above named persons by or on behalf of the undersigned or any third
-  party in respect of or arising out of any accidents which may result in injury or the death of person or damage to or loss
-  of property belonging to any person if such action depends in any way, in whole or in part on work having been done
-  on the automobile by students of the School.<br>
- &emsp; 2. The undersigned acknowledges that the undersigned, having read and understood all of the contents of this
-  Agreement, having taken specific note of the warning stated above, and intend to be legally bound to the contents of
-  this Agreement in so signing it on this ___ day of __________________ , 20___.<br>
- &emsp; 3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
-  Signature of Registered Owner: ___________________<br><br>
-  Name : ___________________<br><br>
-  <input type="submit" name="submit" value="Submit">
+  Date of estimate: <input type="date" name="est_date" value="<?php
+echo $est_date?>" min= "<?php date('Y-m-d');?>"
+placeholder="YYYY-MM-DD" required><br>
+  This estimate expires on: <input type="date" name="expire"
+value="<?php echo $expire?>" min= "<?php date('Y-m-d');?>"
+placeholder="YYYY-MM-DD" required><br><br>
+  <input type="submit" name="submit" value="Send">
 
 </form>
 <?php
@@ -230,190 +165,30 @@ if($x==0){
     $total_cost = $_POST['total_cost'];
     $est_date = $_POST['est_date'];
     $expire = $_POST['expire'];
-      
-?>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-FORM A<br>
-  Automotive Intake Repair Form<br>
-  (including all motorized vehicles and equipment)<br><br>
-  Work Order #
-  <?php echo $workorder ?><br><br>
-  SCHOOL INFORMATION<br>
-  School Name and Address:
-  <?php echo $school ?><br>
-  (hereinafter "the School”)<br><br>
-  Teacher: <?php echo $teacher ?><br><br>
-  AUTOMOBILE TO BE REPAIRED<br>
-  <table style="width:100%">
-    <tr>
-      <td>Year: <?php echo $year ?></td>
-      <td>Make: <?php echo $make ?></td>
-      <td>Model: <?php echo $model ?></td>
-    </tr>
-    <tr>
-      <td>VIN #: <?php echo $vin ?></td>
-      <td>License Plate: <?php echo $license ?></td>
-      <td>Odometer: <?php echo $odometer ?></td>
-    </tr>
-  </table>
-  <br><br>
-  Detailed description of work to be performed including anticipated parts (including whether each part is a
-  new part provided by the original equipment manufacturer, a new part not provided by the original
-  equipment manufacturer, a used part or a reconditioned part) shop materials, environmental related, fees,
-  disposal/recycling fees, etc.:<br><br>
-  <?php echo  $description ?>
-  <br><br>
-  Date on which the work shall be completed: <?php echo $end_date ?><br><br>
 
 
-  <table style="width:100%">
-    <tr>
-      <th>TOTAL ESTIMATED COST</th>
-      <th>Price Per Unit</th> 
-      <th>Line Total</th>
-    </tr>
-  
-    <tr>
-      <td>PARTS:</td>
-      <td>$<?php echo $parts_a ?></td>
-      <td>$<?php echo $parts_b ?></td>
-    </tr>
-    <tr>
-      <td>LABOUR:</td>
-      <td>$<?php echo $labour_a ?></td>
-      <td>$<?php echo $labour_b ?></td>
-      </tr>
-        <tr>
-      <td>SHOP SUPPLIES:</td>
-      <td>$<?php echo $shop_a ?></td>
-      <td>$<?php echo $shop_b ?></td>
-      </tr>
-      <tr>
-      <td>RECYCLING/ DISPOSAL FEE:</td>
-      <td>$<?php echo $fee_a ?></td>
-      <td>$<?php echo $fee_b ?></td>
-      </tr>
-      <tr>
-      <td>TOTAL ESTIMATED COST:</td>
-      <td></td>
-      <td>$<?php echo $total_cost ?></td>
-      </tr>
-  </table>
-  <br><br>
-  The Board agrees that it will not charge the undersigned an amount that exceeds the Total
-  Estimated Cost by more than 10 per cent.<br>
-  Date of estimate: <?php echo $est_date ?><br>
-  This estimate expires on: <?php echo $expire ?><br><br>
-  Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned ______
-  ; or (B) disposed of by the School _____<br><br>
+$sql = "INSERT INTO FORM_A(work_order_num, school_name,
+teacher_first_name, year, make, model, vin_num, license_plate,
+odometer, detailed_desc, end_date, parts_ppu, parts_total,labour_ppu,
+labour_total, shop_supplies_ppu, shop_supplies_total,
+recycle_dispose_ppu, recycle_dispose_total, estimated_total_cost,
+estimate_date, estimate_expires_on) VALUES ('$workorder', '$school',
+'$teacher', '$year', '$make', '$model', '$vin', '$license',
+'$odometer', '$description', '$end_date', '$parts_a', '$parts_b',
+'$labour_a', '$labour_b', '$shop_a', '$shop_b',  '$fee_a', '$fee_b',
+'$total_cost', '$est_date', '$expire')";
 
-  WAIVER AND RELEASE OF LIABILITY<br>
-  &emsp;· I agree to release and hold the Peel District School Board (the “Board”), its trustees, officers, agents,
-  volunteers, students and insurers and their respective heirs, executors, personal representatives,
-  successors and assigns (the “Indemnified Parties”) harmless and to indemnify them from and
-  against all actions, damages, claims and demands which may be brought against the Indemnified
-  Parties by or on behalf of the undersigned or any third party in respect of or arising out of the
-  vehicle being in the possession of the Board, or out of any accidents which may result in injury or
-  death of person or damage to or loss of property belonging to any person if such action depends in
-  any way, in whole or in part on work having been performed on the vehicle by students of the
-  Board.<br>
-  &emsp;· I agree to pay for all labour, parts, materials, supplies, environmental fees, disposal and recycling
-  fees of all kinds, required to perform the work described above. Final payment is due when the
-  work is completed.<br>
-  &emsp;· I understand that if my automobile is not claimed by me within THIRTY (30) days after notice of
-  completion of work, whether or not I have actually received notice, the automobile and all property
-  therein or thereon will be deemed abandoned and disposed of as considered appropriate in the sole
-  discretion of the Board with the entire proceeds from such disposal belonging to the Board as
-  beneficial owner and not as a trustee for its own use absolutely.<br>
-  &emsp;· I agree that any notice may be adequately given by prepaid post to the address below. I agree that
-  the onus of keeping up to date at all times as to the progress of and cost of the repairs to the
-  automobile rests solely with me.<br>
- &emsp; · I may decline the estimated amount above and instead authorize the Board to perform the work
-  outlined at a cost not to exceed $___________________, by initialing
-  here:___________________.<br><br>
-  <table style="width:100%">
-    <tr>
-      <td>Name:___________________</td>
-      <td>Phone: ___________________</td>
-      <td>Address:___________________</td>
-    </tr>
-    <tr>
-      <td>Email:___________________</td>
-      <td>Date:___________________</td>
-    </tr>
-  </table><br><br>
-
-
-  Please proceed to the
-  AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT
-  <br><br>
-
-  Automotive Repair Waiver<br>
-  Work Order #
-  <?php echo $workorder?><br><br>
-  AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT<br>
-  *Schools must retain form for 3 years*<br>
-  WARNING: BY SIGNING THIS AGREEMENT YOU GIVE UP YOUR RIGHT TO BRING A COURT ACTION TO RECOVER
-  COMPENSATION FOR ANY INJURY OR DEATH TO YOU OR OTHERS AND FOR DAMAGE TO YOUR
-  PROPERTY ARISING DIRECTLY, INDIRECTLY OR CONSEQUENTIALLY FROM OR RELATED TO YOUR CHOICE
-  TO HAVE UNTRAINED STUDENTS WORK ON YOUR AUTOMOBILE.<br>
-  PRELIMINARY UNDERSTANDING<br>
- &emsp; 1. The undersigned acknowledges and agrees that while the undersigned’s automobile and all property located in or
-  on the automobile is located at the School, whether indoors or outside, that the undersigned assumes all risk
-  of loss or damage to the automobile and the said property and further agree that:<br>
-  &emsp;&emsp;(a) The undersigned is aware that untrained students will perform work on our automobile and that
-  allowing untrained students to do so has inherent risks and hazards, which the undersigned voluntarily
-  assumes; and<br>
-  &emsp;&emsp;(b) The undersigned has full knowledge of the nature and extent of the risks associated with allowing
-  untrained students to work on the undersigned’s automobile, the particulars of which include but are
-  not limited to:<br>
-  &emsp;&emsp;&emsp;· damage to or destruction of the automobile or any of its component parts, which damage or
-  destruction will not be repaired except at my full cost and expense;<br>
-  &emsp;&emsp;&emsp;· return of the automobile in an unsafe and un-road worthy condition;<br>
-  &emsp;&emsp;&emsp;· death or personal injury to the undersigned or others from operation of the automobile following
-  work being done on it by untrained students; and<br>
-  &emsp;&emsp;(c) The undersigned agrees that there may be unforeseen and unforeseeable risks associated with the
-  undersigned’s choice to have untrained students work on the undersigned’s automobile and those risks
-  although not foreseen or foreseeable are accepted, it being understood that the intent of this waiver
-  and release is to cover any and all eventualities whether foreseeable or not.<br>
-  &emsp;2. Despite the above-mentioned risks and hazards, the undersigned freely and voluntarily assume such risks and
-  hazards inherent in allowing untrained students to work on the undersigned’ automobile at the School.<br>
-  ___________________<br>
-  (Initial)<br><br>
-  RELEASE AND WAIVER OF LIABILITY<br>
-  &emsp;1. In consideration of the work to be done on the undersigned’s automobile, which will be done by untrained students
-  of the Board, whether the work occurs during school hours, after school hours, or at any other time, the undersigned,
-  as the owner(s) of the automobile described on the attached Repair Work Order Form agree to release, indemnify
-  and save harmless the Indemnified Parties and each of them against and from all actions damages, claims and
-  demands which may be brought against the above named persons by or on behalf of the undersigned or any third
-  party in respect of or arising out of any accidents which may result in injury or the death of person or damage to or loss
-  of property belonging to any person if such action depends in any way, in whole or in part on work having been done
-  on the automobile by students of the School.<br>
-  &emsp;2. The undersigned acknowledges that the undersigned, having read and understood all of the contents of this
-  Agreement, having taken specific note of the warning stated above, and intend to be legally bound to the contents of
-  this Agreement in so signing it on this ___ day of __________________ , 20___.<br>
-  &emsp;3. This Agreement is complimentary to and in addition to the Repair Work Order Form to which it is attached.<br><br>
-  Signature of Registered Owner: ___________________<br><br>
-  Name : ___________________<br><br>
-  <input type="submit" name="edit" value="Change">
-  <button>Send</button>
-    </form>
-  <?php  
-  };
-
-if(isset($_POST['edit'])){
-     $x=2;
-};
-
-if ($_POST['submit']){
-     $sql="INSERT INTO 'FORM_A'('work_order_num', 'school_name', 'teacher_name', 'year', 'make', 'model', 'vin_num', 'license _plate', 'odometer', 'detailed_desc`, `parts_ppu`, `parts_total`, 'labour_ppu', 'labour_total', 'shop_supplies_ppu', 'shop_supplies_total', 'recycle_dispose_ppu', 'recycle_dispose_total', 'estimated_total_cost', 'estimate_date', 'estimate_expires_on') VALUES ('$workorder', '$school', '$teacher', '$year', '$make', '$model', '$vin', '$license', '$odometer', '$description', '$end_date', '$parts_a', '$parts_b', '$shop_a', '$shop_b', '$labour_a', '$labour_b', '$fee_a', '$fee_b', '$total_cost', '$est_date', '$expire';)"
    if($conn->query($sql)==TRUE){
-
+//echo "YESS";
    }else{
      echo "Error ".$sql."<br>".$conn->error;
    }
+$conn->close();
+?>
+<a href="index.html">Return to home?</a>
+<?php
 }
-
 ?>
   </body>
 </html>
+
