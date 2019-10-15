@@ -1,3 +1,4 @@
+c_bform
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,10 +7,22 @@
   <link href="page.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <?php  
-    $x=0;
-$sql="SELECT `id`, `work_order_num`, `invoice_num`, `invoice_date`, `model`, `make`, `year`, `vin_num`, `license_plate`, `odometer_intake`, `odometer_return`, `detailed_desc`, `authorization_date`, `completed_date`, `vehicle_return_date`, `parts_ppu`, `parts_total`, `labour_ppu`, `labour_total`, `shop_supplies_ppu`, `shop_supplies_total`, `recycle_disposal_ppu`, `recycle_disposal_total`, `estimate_authorized_cost`, `total_cost`, `teacher_first_name` FROM `FORM_B`";
-    
+    <?php
+ include "connectdb.php";
+include "t_nav.html";
+
+$sql="SELECT `id`, `work_order_num`, `invoice_num`, `invoice_date`,
+`model`, `make`, `year`, `vin_num`, `license_plate`,
+`odometer_intake`, `odometer_return`, `detailed_desc`,
+`authorization_date`, `completed_date`, `vehicle_return_date`,
+`parts_ppu`, `parts_total`, `labour_ppu`, `labour_total`,
+`shop_supplies_ppu`, `shop_supplies_total`, `recycle_disposal_ppu`,
+`recycle_disposal_total`, `estimate_authorized_cost`, `total_cost`,
+`teacher_first_name` FROM FORM_B WHERE id=2";
+$result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+    $id= $row['id'];
     $workorder= $row['work_order_num'];
     $teacher=$row['teacher_first_name'];
     $year=$row['year'];
@@ -33,9 +46,9 @@ $sql="SELECT `id`, `work_order_num`, `invoice_num`, `invoice_date`, `model`, `ma
     $fee_b=$row['recycle_disposal_total'];
     $est_cost=$row['estimate_authorized_cost'];
     $total_cost=$row['total_cost'];
-        
-        
-  
+        }
+        }
+
     $name=
     $address=
     $phone=
@@ -44,11 +57,12 @@ $sql="SELECT `id`, `work_order_num`, `invoice_num`, `invoice_date`, `model`, `ma
     $invoice_num=
     $signature=
     $removed=null;
-    
-  if (!isset($_POST['submit']) or $x==2){
-      
+
+  if (!isset($_POST['submit'])){
+
 ?>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="post" action="<?php echo
+htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     FORM B<br>
 Automotive Final Invoice<br>
 (to be filled in when service complete)<br><br>
@@ -57,14 +71,20 @@ Work Order #
 CUSTOMER INFORMATION<br>
   <table style="width:100%">
     <tr>
-        <td>Name: <input type="text" name="name" value="<?php echo $name?>" required></td>
-      <td>Phone: <input type="text" name="phone" value="<?php echo $phone?>" required></td>
-      <td>Address: <input type="text" name="address" value="<?php echo $address?>" required></td>
+        <td>Name: <input type="text" name="name" value="<?php echo
+$name?>" required></td>
+      <td>Phone: <input type="text" name="phone" value="<?php echo
+$phone?>" required></td>
+      <td>Address: <input type="text" name="address" value="<?php echo
+$address?>" required></td>
     </tr>
     <tr>
-      <td>Email: <input type="text" name="email" value="<?php echo $email?>"required></td>
-      <td>Invoice #: <input type="text" name="invoice_num" value="<?php echo $invoice_num?>"required></td>
-      <td>Date of Invoice: <input type="text" name="invoice_date" value="<?php echo $invoice_date?>"required></td>
+      <td>Email: <input type="text" name="email" value="<?php echo
+$email?>"required></td>
+      <td>Invoice #: <input type="text" name="invoice_num"
+value="<?php echo $invoice_num?>"required></td>
+      <td>Date of Invoice: <input type="text" name="invoice_date"
+value="<?php echo $invoice_date?>"required></td>
     </tr>
   </table>
 <br>
@@ -84,24 +104,33 @@ AUTOMOBILE REPAIRED<br>
     </tr>
   </table>
 <br>
-Detailed description of work performed, parts (including whether each part is a new part provided by the
-original equipment manufacturer, a new part not provided by the original equipment manufacturer, a used
-part or a reconditioned part) shop materials, environmental related, fees, disposal/recycling fees, etc.:<br><?php echo $workorder?><br><br>
+Detailed description of work performed, parts (including whether each
+part is a new part provided by the
+original equipment manufacturer, a new part not provided by the
+original equipment manufacturer, a used
+part or a reconditioned part) shop materials, environmental related,
+fees, disposal/recycling fees, etc.:<br><?php echo
+$workorder?><br><br>
 Date of authorization of work: <?php echo $date_author?><br><br>
 Date of completion of work:<?php echo $date_complete?><br><br>
 Date of return of vehicle: <?php echo $date_return?><br><br>
-Any parts removed in the course of work on or repairs to the automobile shall be (select one):<br> (A) returned to the undersigned <input type="radio" name="removed" value="b" <?php if($removed=="a"){echo "selected";} ?>required>
-  ; or (B) disposed of by the School <input type="radio" name="removed" value="a" <?php if($removed=="b"){echo "selected";} ?>required><br><br>
+Any parts removed in the course of work on or repairs to the
+automobile shall be (select one):<br> (A) returned to the undersigned
+<input type="radio" name="removed" value="b" <?php
+if($removed=="a"){echo "selected";} ?>required>
+  ; or (B) disposed of by the School <input type="radio"
+name="removed" value="a" <?php if($removed=="b"){echo "selected";}
+?>required><br><br>
 
 <br><br>
 
   <table style="width:100%">
     <tr>
       <th>TOTAL ESTIMATED COST</th>
-      <th>Price Per Unit</th> 
+      <th>Price Per Unit</th>
       <th>Line Total</th>
     </tr>
-  
+
     <tr>
       <td>PARTS:</td>
       <td>$<?php echo $parts_a?>
@@ -133,37 +162,51 @@ Any parts removed in the course of work on or repairs to the automobile shall be
       <td>$<?php echo $total_cost?></td>
       </tr>
   </table><br><br>
-If this Invoice is not paid, and/or if the automobile is not claimed within THIRTY (30) days after notice of completion
-of work, it and all property therein or thereon will be deemed abandoned and disposed of as considered appropriate
+If this Invoice is not paid, and/or if the automobile is not claimed
+within THIRTY (30) days after notice of completion
+of work, it and all property therein or thereon will be deemed
+abandoned and disposed of as considered appropriate
 in the sole discretion of the Board.<br><br>
 WARRANTY<br>
-Notwithstanding the STUDENT AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT, for each new or
+Notwithstanding the STUDENT AUTOMOTIVE SERVICES RELEASE AND WAIVER OF
+LIABILITY AGREEMENT, for each new or
 reconditioned part or the labour required to install it:<br>
-    &emsp;i. the Board warrants the part and/or labour for a minimum of 90 days or 5,000 kilometers, whichever comes first,<br>
-    &emsp;ii. the warranty set out in subparagraph i. is provided under the Consumer Protection Act, 2002 (Ontario) and may
+    &emsp;i. the Board warrants the part and/or labour for a minimum
+of 90 days or 5,000 kilometers, whichever comes first,<br>
+    &emsp;ii. the warranty set out in subparagraph i. is provided
+under the Consumer Protection Act, 2002 (Ontario) and may
 not be waived by the consumer, and<br>
     &emsp;iii. the warranty set out in subparagraph i. does not apply to,<br>
 &emsp;&emsp;A. fluids, filters, lights, tires or batteries, or<br>
-&emsp;&emsp;B. a part that was not warranted by the manufacturer of the vehicle when the vehicle was sold as new.<br><br>
+&emsp;&emsp;B. a part that was not warranted by the manufacturer of
+the vehicle when the vehicle was sold as new.<br><br>
 CONSUMER PROTECTION ACT, 2002<br>
-The Consumer Protection Act, 2002 (Ontario) provides you with rights in relation to having a motor vehicle repaired.
-Among other things, you have a right to a written estimate. A repairer may not charge an amount that is more than ten
-(10) per cent above that estimate. If you waived your right to an estimate, the repairer must have your authorization of
-the maximum amount that you will pay for the repairs. The repairer may not charge more than the maximum amount
-you authorized. In either case, the repairer may not charge for any work you did not authorize.<br><br>
-If you have concerns about the work or repairs performed by the repairer or about your rights or duties under the
-Consumer Protection Act, 2002, (Ontario) you should contact the Ministry of Consumer and Business Services.<br><br>
+The Consumer Protection Act, 2002 (Ontario) provides you with rights
+in relation to having a motor vehicle repaired.
+Among other things, you have a right to a written estimate. A repairer
+may not charge an amount that is more than ten
+(10) per cent above that estimate. If you waived your right to an
+estimate, the repairer must have your authorization of
+the maximum amount that you will pay for the repairs. The repairer may
+not charge more than the maximum amount
+you authorized. In either case, the repairer may not charge for any
+work you did not authorize.<br><br>
+If you have concerns about the work or repairs performed by the
+repairer or about your rights or duties under the
+Consumer Protection Act, 2002, (Ontario) you should contact the
+Ministry of Consumer and Business Services.<br><br>
 PEEL DISTRICT SCHOOL BOARD<br>
-Teacher’s Name:<?php echo $teacher?><br>
+Teacher's Name:<?php echo $teacher?><br>
 I have authority to bind the Board.<br>
 E. & O. Excepted<br><br>
 ACKNOWLEDGEMENT<br>
 The foregoing is acknowledged and accepted by the undersigned.<br><br>
-Signature of Registered Owner: <input type="text" name="signature" value="<?php echo $signature?>" required><br><br>
-Name: <input type="text" name="name" value="<?php echo $name?>" required><br><br>
-    
-    
-    <input type="submit" name="submit" value="Submit">
+Signature of Registered Owner: <input type="text" name="signature"
+value="<?php echo $signature?>" required><br><br>
+Name: <input type="text" name="name" value="<?php echo $name?>"
+required><br><br>
+
+<input type="submit" name="submit" value="Send">
 
 </form>
 <?php
@@ -177,136 +220,24 @@ Name: <input type="text" name="name" value="<?php echo $name?>" required><br><br
     $invoice_num=$_POST['invoice_num'];
     $signature=$_POST['signature'];
 
-?>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    FORM B<br>
-Automotive Final Invoice<br>
-(to be filled in when service complete)<br><br>
-Work Order #
-<?php echo $workorder?><br><br>
-CUSTOMER INFORMATION<br>
-  <table style="width:100%">
-    <tr>
-        <td>Name: <?php echo $name?></td>
-      <td>Phone: <?php echo $phone?></td>
-      <td>Address: <?php echo $address?></td>
-    </tr>
-    <tr>
-      <td>Email: <?php echo $email?></td>
-      <td>Invoice #: <?php echo $invoice_num?></td>
-      <td>Date of Invoice: <?php echo $invoice_date?></td>
-    </tr>
-  </table>
-<br>
-AUTOMOBILE REPAIRED<br>
 
-  <table style="width:100%">
-    <tr>
-      <td>Year:<?php echo $year?></td>
-      <td>VIN #: <?php echo $vin?></td>
-      <td>Make:<?php echo $make?></td>
-      <td>Model:<?php echo $model?></td>
-    </tr>
-    <tr>
-      <td>License Plate:<?php echo $license?></td>
-      <td>Odometer reading on intake:<?php echo $odo_intake?></td>
-      <td>Odometer reading on return:<?php echo $odo_return?></td>
-    </tr>
-  </table>
-<br>
-Detailed description of work performed, parts (including whether each part is a new part provided by the
-original equipment manufacturer, a new part not provided by the original equipment manufacturer, a used
-part or a reconditioned part) shop materials, environmental related, fees, disposal/recycling fees, etc.:<br><?php echo $workorder?><br><br>
-Date of authorization of work: <?php echo $date_author?><br><br>
-Date of completion of work:<?php echo $date_complete?><br><br>
-Date of return of vehicle: <?php echo $date_return?><br><br>
-Any parts removed in the course of work on or repairs to the automobile shall be <?php if($removed=="a"){echo "returned to the undersigned.";}else{echo "disposed of by the School.";}?><br><br>
+$sql="UPDATE FORM_B SET first_name='$name', address='$address',
+phone='$phone', email='$email', invoice_date='$invoice_date',
+invoice_num='$invoice_num',owner_signature='$signature',
+parts_removed='$removed' WHERE id='$id'";
 
-<br><br>
-
-  <table style="width:100%">
-    <tr>
-      <th>TOTAL ESTIMATED COST</th>
-      <th>Price Per Unit</th> 
-      <th>Line Total</th>
-    </tr>
-  
-    <tr>
-      <td>PARTS:</td>
-      <td>$<?php echo $parts_a?>
-      <td>$<?php echo $parts_b?></td>
-    </tr>
-    <tr>
-      <td>LABOUR:</td>
-      <td>$<?php echo $labour_a?></td>
-      <td>$<?php echo $labour_b?></td>
-      </tr>
-        <tr>
-      <td>SHOP SUPPLIES:</td>
-      <td>$<?php echo $shop_a?></td>
-      <td>$<?php echo $shop_b?></td>
-      </tr>
-      <tr>
-      <td>RECYCLING/ DISPOSAL FEE:</td>
-      <td>$<?php echo $workorder?></td>
-      <td>$<?php echo $workorder?></td>
-      </tr>
-      <tr>
-      <td>ESTIMATED OR AUTHORIZED COST:</td>
-      <td>$<?php echo $est_cost?></td>
-      </tr>
-      <tr>
-      <tr>
-      <td>TOTAL COST:</td>
-      <td></td>
-      <td>$<?php echo $total_cost?></td>
-      </tr>
-  </table><br><br>
-If this Invoice is not paid, and/or if the automobile is not claimed within THIRTY (30) days after notice of completion
-of work, it and all property therein or thereon will be deemed abandoned and disposed of as considered appropriate
-in the sole discretion of the Board.<br><br>
-WARRANTY<br>
-Notwithstanding the STUDENT AUTOMOTIVE SERVICES RELEASE AND WAIVER OF LIABILITY AGREEMENT, for each new or
-reconditioned part or the labour required to install it:<br>
-    &emsp;i. the Board warrants the part and/or labour for a minimum of 90 days or 5,000 kilometers, whichever comes first,<br>
-    &emsp;ii. the warranty set out in subparagraph i. is provided under the Consumer Protection Act, 2002 (Ontario) and may
-not be waived by the consumer, and<br>
-    &emsp;iii. the warranty set out in subparagraph i. does not apply to,<br>
-&emsp;&emsp;A. fluids, filters, lights, tires or batteries, or<br>
-&emsp;&emsp;B. a part that was not warranted by the manufacturer of the vehicle when the vehicle was sold as new.<br><br>
-CONSUMER PROTECTION ACT, 2002<br>
-The Consumer Protection Act, 2002 (Ontario) provides you with rights in relation to having a motor vehicle repaired.
-Among other things, you have a right to a written estimate. A repairer may not charge an amount that is more than ten
-(10) per cent above that estimate. If you waived your right to an estimate, the repairer must have your authorization of
-the maximum amount that you will pay for the repairs. The repairer may not charge more than the maximum amount
-you authorized. In either case, the repairer may not charge for any work you did not authorize.<br><br>
-If you have concerns about the work or repairs performed by the repairer or about your rights or duties under the
-Consumer Protection Act, 2002, (Ontario) you should contact the Ministry of Consumer and Business Services.<br><br>
-PEEL DISTRICT SCHOOL BOARD<br>
-Teacher’s Name:<?php echo $teacher?><br>
-I have authority to bind the Board.<br>
-E. & O. Excepted<br><br>
-ACKNOWLEDGEMENT<br>
-The foregoing is acknowledged and accepted by the undersigned.<br><br>
-Signature of Registered Owner: <?php echo $signature?><br><br>
-Name: <?php echo $name?><br>
-      <input type="submit" name="edit" value="Change">
-  <button>Send</button>
-    </form>
-  <?php  
-};
-
-if(isset($_POST['edit'])){
-     $x=2;
-};
-if ($_POST['submit']){
-$sql="IINSERT INTO `FORM_B`(`first_name`, `address`, `phone`, `email`, `invoice_date`, `invoice_num`,`owner_signature`, `parts_removed`) VALUES (   '$name','$address','$phone','$email','$invoice_date','$invoice_num','$signature','$removed')";
    if($conn->query($sql)==TRUE){
+echo "YESSS";
    }else{
      echo "Error ".$sql."<br>".$conn->error;
    }
 }
-
+$conn->close();
+?>
+<a href="index.html">Return to home?</a>
+<?php
+}
 ?>
   </body>
 </html>
+
