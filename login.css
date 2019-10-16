@@ -2,9 +2,6 @@ body {
   margin: 0;
   font-family: 'Bai Jamjuree';
   background-color: rgb(255, 255, 255);
-  background-image: url("loginstamp.gif");
-  background-repeat: repeat;
-  background-size: 3.5vw 3.5vw;
 }
 
 .topnav {
