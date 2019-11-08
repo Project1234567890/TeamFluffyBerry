@@ -2,10 +2,31 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link href="page.css" rel="stylesheet" type="text/css" />
+  <link href="page.csss" rel="stylesheet" type="text/css" />
   <link href="login.css" rel="stylesheet" type="text/css">
   
   <style>
+    
+    .anim {
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  from {margin-left: 30%;}
+  to {float: 0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  from {margin-left: 30%;}
+  to {float: 0px;}
+}
+    
+    
     .position_Center {
   /*margin-left: auto;
   margin-right: auto;
