@@ -46,6 +46,19 @@
       text-align:center;
     
     } 
+    
+    add_subtract_tab {
+      position: relative; 
+      margin: 0px 0px;
+      top: -3vw;
+      width: 5vw; 
+      height: 10vw; 
+      float: right; 
+      z-index: -100; 
+      border:3px solid black; 
+      border-radius: 15px;
+    }
+    
     .Add_Classroom_box {
       width: 10vw;
       height: 10vw;
@@ -94,7 +107,7 @@
 
   font-size: 1.5vw;
   color:black;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: e5e5e5;
   margin: 5% 7%;
   margin-bottom: 
   border-radius: 1.5vw;
@@ -123,11 +136,12 @@
     
 <div class="subhead" style=" user-select: none;" class="gold_line">
                                                                   
-     <div style="right: 100px"> 
-    <button style="position: relative; margin: 0px 0px;top: -3vw;width: 5vw; height: 10vw; float: right; z-index: -100; border:3px solid black; border-radius: 15px;">
+<div style="right: 100px"> 
+    <button class="add_subtract_tab">
       <p>Class A</p>
     </button>
-<button style="position: relative; margin: 0px 0px;top: -3vw;width: 5vw; height: 10vw; float: right; z-index: -100; border:3px solid black; border-radius: 15px;">
+                                    
+    <button class="add_subtract_tab">
       <p>Class B</p>
     </button> 
 </div>                                                 
