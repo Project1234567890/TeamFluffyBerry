@@ -8,30 +8,8 @@
   <body>
 
 <?php
-include "connectdb.php";
-include "t_nav.html";
-
-    $workorder= $school= $teacher=
-    $year=
-    $make=
-    $model=
-    $vin=
-    $license=
-    $odometer=
-    $description=
-    $end_date=
-    $parts_a=
-    $parts_b=
-    $shop_a=
-    $shop_b=
-    $labour_a=
-    $labour_b=
-    $fee_a=
-    $fee_b=
-    $total_cost=
-    $est_date=
-    $expire =null;
-
+//include "connectdb.php";
+//include "t_nav.html";
 
   if (!isset($_POST['submit'])){
 
@@ -49,8 +27,19 @@ required><br><br>
   School Name and Address:
   <input type="text" name="school" value="<?php echo $school?>"required><br>
   (hereinafter "the School")<br><br>
-  Teacher: <input type="text" name="teacher" value="<?php echo
-$teacher?>"required><br><br>
+  Teacher:   <table style="width:40%">
+    <tr>
+        <td><input type="text" name="teacher_last" value="<?php echo
+$teacher_last_name?>" required><br></td>
+        <td><input type="text" name="teacher_first" value="<?php echo
+$teacher_first_name?>" required><br></td>
+    </tr>
+    <tr>
+      <td>(Last)</td>
+      <td>(First)</td>
+    </tr>
+  </table>
+<br>
   AUTOMOBILE TO BE REPAIRED<br>
   <table style="width:100%">
     <tr>
@@ -145,12 +134,13 @@ placeholder="YYYY-MM-DD" required><br><br>
   }else{
     $workorder = $_POST['workorder'];
     $school = $_POST['school'];
-    $teacher = $_POST['teacher'];
+    $teacher_first = $_POST['teacher_first'];
+    $teacher_last = $_POST['teacher_last'];
     $year = $_POST['year'];
     $make = $_POST['make'];
     $model = $_POST['model'];
     $vin = $_POST['vin'];
-    $license = $_POST['workorder'];
+    $license = $_POST['license'];
     $odometer = $_POST['odometer'];
     $description = $_POST['description'];
     $end_date = $_POST['end_date'];
@@ -166,24 +156,24 @@ placeholder="YYYY-MM-DD" required><br><br>
     $est_date = $_POST['est_date'];
     $expire = $_POST['expire'];
 
-
+/*
 $sql = "INSERT INTO FORM_A(work_order_num, school_name,
-teacher_first_name, year, make, model, vin_num, license_plate,
-odometer, detailed_desc, end_date, parts_ppu, parts_total,labour_ppu,
-labour_total, shop_supplies_ppu, shop_supplies_total,
-recycle_dispose_ppu, recycle_dispose_total, estimated_total_cost,
-estimate_date, estimate_expires_on) VALUES ('$workorder', '$school',
-'$teacher', '$year', '$make', '$model', '$vin', '$license',
-'$odometer', '$description', '$end_date', '$parts_a', '$parts_b',
-'$labour_a', '$labour_b', '$shop_a', '$shop_b',  '$fee_a', '$fee_b',
-'$total_cost', '$est_date', '$expire')";
+teacher_first_name, teacher_last_name, year, make, model, vin_num,
+license_plate, odometer, detailed_desc, end_date, parts_ppu,
+parts_total,labour_ppu, labour_total, shop_supplies_ppu,
+shop_supplies_total, recycle_dispose_ppu, recycle_dispose_total,
+estimated_total_cost, estimate_date, estimate_expires_on) VALUES
+('$workorder', '$school', '$teacher_first', '$teacher_last', '$year',
+'$make', '$model', '$vin', '$license', '$odometer', '$description',
+'$end_date', '$parts_a', '$parts_b', '$labour_a', '$labour_b',
+'$shop_a', '$shop_b',  '$fee_a', '$fee_b', '$total_cost', '$est_date',
+'$expire')";
 
    if($conn->query($sql)==TRUE){
-//echo "YESS";
    }else{
      echo "Error ".$sql."<br>".$conn->error;
    }
-$conn->close();
+$conn->close();*/
 ?>
 <a href="index.html">Return to home?</a>
 <?php
@@ -191,4 +181,3 @@ $conn->close();
 ?>
   </body>
 </html>
-
