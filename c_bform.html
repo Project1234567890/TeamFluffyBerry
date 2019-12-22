@@ -1,4 +1,3 @@
-c_bform
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,21 +7,20 @@ c_bform
   </head>
   <body>
     <?php
- include "connectdb.php";
-include "t_nav.html";
+ //include "connectdb.php";
+//include "t_nav.html";
 
-$sql="SELECT `id`, `work_order_num`, `invoice_num`, `invoice_date`,
-`model`, `make`, `year`, `vin_num`, `license_plate`,
-`odometer_intake`, `odometer_return`, `detailed_desc`,
-`authorization_date`, `completed_date`, `vehicle_return_date`,
-`parts_ppu`, `parts_total`, `labour_ppu`, `labour_total`,
-`shop_supplies_ppu`, `shop_supplies_total`, `recycle_disposal_ppu`,
-`recycle_disposal_total`, `estimate_authorized_cost`, `total_cost`,
-`teacher_first_name` FROM FORM_B WHERE id=2";
+/*$sql="SELECT work_order_num, invoice_num, invoice_date, model, make,
+year, vin_num, license_plate, odometer_intake, odometer_return,
+detailed_desc, authorization_date, completed_date,
+vehicle_return_date, parts_ppu, parts_total, labour_ppu, labour_total,
+shop_supplies_ppu, shop_supplies_total, recycle_disposal_ppu,
+recycle_disposal_total, estimate_authorized_cost, total_cost,
+teacher_first_name, teacher_last_name, first_name, last_name,
+'signature' FROM FORM_B WHERE id=5";
 $result = $conn->query($sql);
     if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-    $id= $row['id'];
     $workorder= $row['work_order_num'];
     $teacher=$row['teacher_first_name'];
     $year=$row['year'];
@@ -46,10 +44,43 @@ $result = $conn->query($sql);
     $fee_b=$row['recycle_disposal_total'];
     $est_cost=$row['estimate_authorized_cost'];
     $total_cost=$row['total_cost'];
+    $first_name=$row['first_name'];
+    $last_name=$row['last_name'];
+    $address=$row['address'];
+    $phone=$row['phone'];
+    $email=$row['email'];
+    $invoice_date=$row['invoice_date'];
+    $invoice_num=$row['invoice_num'];
+    $signature=$row['owner_signatue'];
+    $removed=$row['parts_removed'];
         }
         }
-
-    $name=
+*/
+    $workorder=
+    $teacher=
+    $year=
+    $make=
+    $model=
+    $vin=
+    $license=
+    $odo_intake=
+    $odo_return=
+    $description=
+    $date_return=
+    $date_author=
+    $date_complete=
+    $parts_a=
+    $parts_b=
+    $shop_a=
+    $shop_b=
+    $labour_a=
+    $labour_b=
+    $fee_a=
+    $fee_b=
+    $est_cost=
+    $total_cost=
+    $first_name=
+    $last_name=
     $address=
     $phone=
     $email=
@@ -57,7 +88,6 @@ $result = $conn->query($sql);
     $invoice_num=
     $signature=
     $removed=null;
-
   if (!isset($_POST['submit'])){
 
 ?>
@@ -71,20 +101,14 @@ Work Order #
 CUSTOMER INFORMATION<br>
   <table style="width:100%">
     <tr>
-        <td>Name: <input type="text" name="name" value="<?php echo
-$name?>" required></td>
-      <td>Phone: <input type="text" name="phone" value="<?php echo
-$phone?>" required></td>
-      <td>Address: <input type="text" name="address" value="<?php echo
-$address?>" required></td>
+        <td>Name: <?php echo $first_name?></td>
+      <td>Phone: <?php echo $phone?></td>
+      <td>Address:<?php echo $address?></td>
     </tr>
     <tr>
-      <td>Email: <input type="text" name="email" value="<?php echo
-$email?>"required></td>
-      <td>Invoice #: <input type="text" name="invoice_num"
-value="<?php echo $invoice_num?>"required></td>
-      <td>Date of Invoice: <input type="text" name="invoice_date"
-value="<?php echo $invoice_date?>"required></td>
+      <td>Email:<?php echo $email?></td>
+      <td>Invoice #: <?php echo $invoice_num?></td>
+      <td>Date of Invoice: <?php echo $invoice_date?></td>
     </tr>
   </table>
 <br>
@@ -115,12 +139,10 @@ Date of authorization of work: <?php echo $date_author?><br><br>
 Date of completion of work:<?php echo $date_complete?><br><br>
 Date of return of vehicle: <?php echo $date_return?><br><br>
 Any parts removed in the course of work on or repairs to the
-automobile shall be (select one):<br> (A) returned to the undersigned
-<input type="radio" name="removed" value="b" <?php
-if($removed=="a"){echo "selected";} ?>required>
-  ; or (B) disposed of by the School <input type="radio"
-name="removed" value="a" <?php if($removed=="b"){echo "selected";}
-?>required><br><br>
+automobile shall be:
+<?php if($removed == 'a') echo "returnedto the undersigned.";
+else echo "disposed of by the Board.";
+?>
 
 <br><br>
 
@@ -203,36 +225,40 @@ ACKNOWLEDGEMENT<br>
 The foregoing is acknowledged and accepted by the undersigned.<br><br>
 Signature of Registered Owner: <input type="text" name="signature"
 value="<?php echo $signature?>" required><br><br>
-Name: <input type="text" name="name" value="<?php echo $name?>"
-required><br><br>
+Name:<br>
+  <table style="width:40%">
+    <tr>
+        <td><input type="text" name="last_name" value="<?php echo
+$last_name?>" required></td>
+        <td><input type="text" name="first_name" value="<?php echo
+$first_name?>" required></td>
+    </tr>
+    <tr>
+      <td>(Last)</td>
+      <td>(First)</td>
+    </tr>
+  </table>
+<br>
 
 <input type="submit" name="submit" value="Send">
 
 </form>
 <?php
   }else{
-    $removed=$_POST['removed'];
-    $name=$_POST['name'];
-    $address=$_POST['address'];
-    $phone=$_POST['phone'];
-    $email=$_POST['email'];
-    $invoice_date=$_POST['invoice_date'];
-    $invoice_num=$_POST['invoice_num'];
+    $first_name=$_POST['first_name'];
     $signature=$_POST['signature'];
+    $last_name=$_POST['last_name'];
+/*
 
-
-$sql="UPDATE FORM_B SET first_name='$name', address='$address',
-phone='$phone', email='$email', invoice_date='$invoice_date',
-invoice_num='$invoice_num',owner_signature='$signature',
-parts_removed='$removed' WHERE id='$id'";
+$sql="UPDATE FORM_B SET first_name='$first_name',
+last_name='$last_name', owner_signature='$signature' WHERE id=5";
 
    if($conn->query($sql)==TRUE){
-echo "YESSS";
    }else{
      echo "Error ".$sql."<br>".$conn->error;
    }
-}
-$conn->close();
+
+$conn->close();*/
 ?>
 <a href="index.html">Return to home?</a>
 <?php
