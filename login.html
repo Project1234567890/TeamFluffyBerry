@@ -2,37 +2,69 @@
 <html>
   <head>
     <title>MotorMaster Login</title>
-    <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree'
+rel='stylesheet'>
     <link href="login.css" rel="stylesheet" type="text/css"/>
   </head>
-  <script src="include.js"></script>
   <body>
-  
-<div class= "topnav"><a href="index.html"><img src="blackstamp.gif" style="height: 35px; margin: 8px;"></a></div>
+  <?php
+//include "connectdb.php";
+?>
+        <div class= "topnav"><a href="index.html"><img src="blackstamp.gif"
+style="height: 35px; margin: 8px;"></a></div>
+
+        <div class="box"><center><h1>LOGIN TO MOTORMASTER</h1></center>
+
+                <form method="post" action="<?php echo
+htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+                        E-mail:<br><br>
+                        <input class="text" type="text" name="email"
+placeholder="example@gmail.com" required>
+                        <br><br><br><br>
+                        Password:<br><br>
+                        <input class="text" type="text" name="pass" placeholder="Forgot
+your password? Too bad" required>
+                        <br><br><br><br>
+                        <button type="submit" name="type" value="teacher"><strong>I'm a
+Teacher!</strong></button>
+                        <button type="submit" name="type" value="student"><strong>I'm a
+Student!</strong></button>
+                        <button type="submit" name="type" value="client"><strong>I'm a
+Client!</strong></button>
+                </form>
+                <br>
+                <center><a style=" color: #273785;" href="sign_up.html">Don't have
+an account? Sign Up!</a></center>
+
+        </div>
+        <div w3-include-html="footer2.html"></div>
+        </body>
+        </html>
+
+<?php
+
+        $pass=$_POST['pass'];
+        $email=$_POST['email'];
+        $type=$_POST['type'];
+/*
+        $sql="SELECT id, password, email, firstname, lastname FROM $type";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                        if($pass==$row['password'] && $email==$row['email']){
+                                session_start();
+                                $_SESSION['id'] = $row['id'];
+                                if($type=='teacher') header('Location:teacher.php');
+                                elseif($type=='client') header('Location: client.php');
+                                elseif($type=='student') header('Location: student.php');
+                                exit();
+                        }
+                }
+        }
+$conn->close();*/
+
+if ($_POST['type']==TRUE) echo "Incorrect email and/or password";
+?>
 
 
-  <div class="box"><center><h1>LOGIN TO MOTORMASTER</h1></center>
-    
-  <form action="">
-  
-  E-mail:<br><br>
-  <input class="text" type="text" name="email" value="" placeholder="example@gmail.com">
-  <br>
-  <br>
-  <br>
-  <br>
-  Password:<br><br>
-  <input class="text" type="text" name="password" value="" placeholder="Forgot your password? Too bad">
-  <br><br><br><br>
-<button type="submit"><strong>S I G N &nbsp&nbspI N</strong></button>
-</form> 
-<br>
-<center><a style=" color: #273785;" href="sign_up.html">Don't have an account? Sign Up!</a></center>
-
-</h1></div>
-  <div w3-include-html="footer2.html"></div>
-<script>
-includeHTML();
-</script>
-  </body>
-  </html>
