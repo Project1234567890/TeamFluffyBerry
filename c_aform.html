@@ -8,15 +8,15 @@
   <body>
 
 <?php
-include "connectdb.php";
+/*include "connectdb.php";
 include "t_nav.html";
 
 $sql="SELECT id, work_order_num, school_name, teacher_first_name,
-year, make, model, vin_num, license_plate, odometer, detailed_desc,
-end_date, parts_ppu, parts_total, labour_ppu, labour_total,
-shop_supplies_ppu, shop_supplies_total, recycle_dispose_ppu,
-recycle_dispose_total, estimated_total_cost, estimate_date,
-estimate_expires_on FROM FORM_A WHERE id=15";
+teacher_last_name, year, make, model, vin_num, license_plate,
+odometer, detailed_desc, end_date, parts_ppu, parts_total, labour_ppu,
+labour_total, shop_supplies_ppu, shop_supplies_total,
+recycle_dispose_ppu, recycle_dispose_total, estimated_total_cost,
+estimate_date, estimate_expires_on FROM FORM_A WHERE id=15";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -24,7 +24,8 @@ if ($result->num_rows > 0) {
 
         $workorder= $row['work_order_num'];
         $school= $row['school_name'];
-        $teacher=$row['teacher_first_name'];
+        $teacher_first=$row['teacher_first_name'];
+        $teacher_last=$row['teacher_last_name'];
         $year=$row['year'];
         $make=$row['make'];
         $model=$row['model'];
@@ -45,12 +46,35 @@ if ($result->num_rows > 0) {
         $est_date=$row['estimate_date'];
         $expire=$row['estimate_expires_on'];
     }
-}
-
+}*/
+        $workorder=
+        $school=
+        $teacher_first=
+        $teacher_last=
+        $year=
+        $make=
+        $model=
+        $vin=
+        $license=
+        $odometer=
+        $description=
+        $end_date=
+    $parts_a=
+    $parts_b=
+    $shop_a=
+    $shop_b=
+    $labour_a=
+    $labour_b=
+    $fee_a=
+    $fee_b=
+    $est_date=
+    $total_cost=
     $removed=
     $exceed=
     $initial=
-    $name=
+    $expire=
+    $first_name=
+    $last_name=
     $address=
     $phone=
     $email=
@@ -63,6 +87,7 @@ if ($result->num_rows > 0) {
   if (!isset($_POST['submit'])){
 
 ?>
+
 <form method="post" action="<?php echo
 htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 FORM A<br>
@@ -74,7 +99,7 @@ FORM A<br>
   School Name and Address:
   <?php echo $school ?><br>
   (hereinafter "the School")<br><br>
-  Teacher:<?php echo $teacher ?><br><br>
+  Teacher: <?php echo $teacher_first." ".$teacher_last ?><br><br>
   AUTOMOBILE TO BE REPAIRED<br>
   <table style="width:100%">
     <tr>
@@ -193,8 +218,10 @@ value="<?php echo $exceed?>" required>, by initialing
 required>.<br><br>
   <table style="width:100%">
     <tr>
-      <td>Name: <input type="text" name="name" value="<?php echo
-$name?>" required></td>
+      <td>Last Name: <input type="text" name="last_name" value="<?php
+echo $last_name?>" required></td>
+      <td>First Name: <input type="text" name="first_name"
+value="<?php echo $first_name?>" required></td>
       <td>Phone: <input type="text" name="phone" value="<?php echo
 $phone?>" required></td>
       <td>Address: <input type="text" name="address" value="<?php echo
@@ -293,17 +320,29 @@ $sign_year?>" required>.<br>
 Repair Work Order Form to which it is attached.<br><br>
   Signature of Registered Owner: <input type="text" name="signature"
 value="<?php echo $signature?>" required><br><br>
-  Name: <input type="text" name="name" value="<?php echo $name?> "
-required><br><br>
+  Name:<br>
+  <table style="width:40%">
+    <tr>
+        <td><input type="text" name="last_name" value="<?php echo
+$last_name?>" required></td>
+        <td><input type="text" name="first_name" value="<?php echo
+$first_name?>" required></td>
+    </tr>
+    <tr>
+      <td>(Last)</td>
+      <td>(First)</td>
+    </tr>
+  </table>
+<br>
   <input type="submit" name="submit" value="Send">
     </form>
   <?php
   }else{
-
     $exceed= $_POST['exceed'];
     $removed= $_POST['removed'];
     $initial=$_POST['initial'];
-    $name=$_POST['name'];
+    $first_name=$_POST['first_name'];
+    $last_name=$_POST['last_name'];
     $address=$_POST['address'];
     $phone=$_POST['phone'];
     $email=$_POST['email'];
@@ -312,21 +351,21 @@ required><br><br>
     $sign_month=$_POST['sign_month'];
     $sign_year=$_POST['sign_year'];
     $signature=$_POST['signature'];
-
+    /*
 $sql="UPDATE FORM_A SET parts_removed_bool='$removed',
 do_not_exceed='$exceed', initials='$initial',
-first_name='$name',address='$address', phone='$phone', email='$email',
-date='$date', day_of_signing='$sign_day',
-month_of_signing='$sign_month', year_of_signing='$sign_year',
-owner_signature='$signature' WHERE id='$id'";
+first_name='$first_name', last_name='$last_name',address='$address',
+phone='$phone', email='$email', date='$date',
+day_of_signing='$sign_day', month_of_signing='$sign_month',
+year_of_signing='$sign_year', owner_signature='$signature' WHERE
+id=15";
 
    if($conn->query($sql)==TRUE){
 
    }else{
      echo "Error ".$sql."<br>".$conn->error;
    }
-$conn->close();
-//header('Location: index.html');
+$conn->close();*/
 ?>
 <a href="index.html">Return to home?</a>
 <?php
