@@ -8,34 +8,10 @@
   <body>
 
 <?php
-include "connectdb.php";
-include "t_nav.html";
-$x=0;
-    $workorder=
-    $teacher=
-    $year=
-    $make=
-    $model=
-    $vin=
-    $license=
-    $odo_intake=
-    $odo_return=
-    $description=
-    $date_return=
-    $date_author=
-    $date_complete=
-    $parts_a=
-    $parts_b=
-    $shop_a=
-    $shop_b=
-    $labour_a=
-    $labour_b=
-    $fee_a=
-    $fee_b=
-    $est_cost=
-    $total_cost=null;
+//include "connectdb.php";
+//include "t_nav.html";
 
-  if (!isset($_POST['submit']) or $x==2){
+  if (!isset($_POST['submit'])){
 
 ?>
 <form method="post" action="<?php echo
@@ -49,14 +25,22 @@ $workorder?>" required><br><br>
 CUSTOMER INFORMATION<br>
   <table style="width:100%">
     <tr>
-      <td>Name:___________________</td>
-      <td>Phone: ___________________</td>
-      <td>Address:___________________</td>
+        <td>Last Name: <input type="text" name="last_name"
+value="<?php echo $last_name?>" required></td>
+        <td>First Name: <input type="text" name="first_name" value="<?php
+echo $first_name?>" required></td>
+      <td>Phone: <input type="text" name="phone" value="<?php echo
+$phone?>" required></td>
+      <td>Address: <input type="text" name="address" value="<?php echo
+$address?>" required></td>
     </tr>
     <tr>
-      <td>Email:___________________</td>
-      <td>Invoice #:___________________</td>
-      <td>Date of Invoice:___________________</td>
+      <td>Email: <input type="text" name="email" value="<?php echo
+$email?>"required></td>
+      <td>Invoice #: <input type="text" name="invoice_num"
+value="<?php echo $invoice_num?>"required></td>
+      <td>Date of Invoice: <input type="text" name="invoice_date"
+value="<?php echo $invoice_date?>"required></td>
     </tr>
   </table>
 <br>
@@ -98,8 +82,12 @@ value="<?php echo $date_complete?>" required><br><br>
 Date of return of vehicle: <input type="text" name="date_return"
 value="<?php echo $date_return?>" required><br><br>
 Any parts removed in the course of work on or repairs to the
-automobile shall be (select one):<br>
-(A) returned to the undersigned ______; or (B) disposed of by the Board_______
+automobile shall be (select one):<br> (A) returned to the undersigned
+<input type="radio" name="removed" value="b" <?php
+if($removed=="a"){echo "selected";} ?>required>
+  ; or (B) disposed of by the School <input type="radio"
+name="removed" value="a" <?php if($removed=="b"){echo "selected";}
+?>required><br><br>
 <br><br>
 
   <table style="width:100%">
@@ -185,14 +173,37 @@ repairer or about your rights or duties under the
 Consumer Protection Act, 2002, (Ontario) you should contact the
 Ministry of Consumer and Business Services.<br><br>
 PEEL DISTRICT SCHOOL BOARD<br>
-Teacher's Name: <input type="text" name="teacher" value="<?php echo
-$teacher?>" required><br>
+Teacher's Name:
+  <table style="width:40%">
+    <tr>
+        <td><input type="text" name="teacher_last" value="<?php echo
+$teacher_last_name?>" required><br></td>
+        <td><input type="text" name="teacher_first" value="<?php echo
+$teacher_first_name?>" required><br></td>
+    </tr>
+    <tr>
+      <td>(Last)</td>
+      <td>(First)</td>
+    </tr>
+  </table>
+<br>
 I have authority to bind the Board.<br>
 E. & O. Excepted<br><br>
 ACKNOWLEDGEMENT<br>
 The foregoing is acknowledged and accepted by the undersigned.<br><br>
 Signature of Registered Owner: ___________________<br><br>
-Name: ___________________<br><br>
+Name:<br>
+  <table style="width:40%">
+    <tr>
+        <td>________________</td>
+        <td>________________</td>
+    </tr>
+    <tr>
+      <td>(Last)</td>
+      <td>(First)</td>
+    </tr>
+  </table>
+<br>
 
     <input type="submit" name="submit" value="Send">
 
@@ -206,7 +217,8 @@ Name: ___________________<br><br>
     $date_complete=$_POST['date_complete'];
     $est_cost=$_POST['est_cost'];
     $workorder = $_POST['workorder'];
-    $teacher = $_POST['teacher'];
+    $teacher_first = $_POST['teacher_first'];
+    $teacher_last = $_POST['teacher_last'];
     $year = $_POST['year'];
     $make = $_POST['make'];
     $model = $_POST['model'];
@@ -222,25 +234,38 @@ Name: ___________________<br><br>
     $fee_a = $_POST['fee_a'];
     $fee_b = $_POST['fee_b'];
     $total_cost = $_POST['total_cost'];
+    $first_name=$_POST['first_name'];
+    $last_name=$_POST['last_name'];
+    $address=$_POST['address'];
+    $phone=$_POST['phone'];
+    $email=$_POST['email'];
+    $invoice_date=$_POST['invoice_date'];
+    $invoice_num=$_POST['invoice_num'];
+    $removed=$_POST['removed'];
+    /*
 
 
      $sql="INSERT INTO FORM_B(work_order_num, teacher_first_name,
-model, make, year, vin_num, license_plate, odometer_intake,
-odometer_return, detailed_desc, authorization_date, completed_date,
-vehicle_return_date, parts_ppu, parts_total, shop_supplies_ppu,
-shop_supplies_total,labour_ppu, labour_total, recycle_disposal_ppu,
-recycle_disposal_total, estimate_authorized_cost, total_cost)VALUES
-('$workorder',  '$teacher', '$model', '$make', '$year',  '$vin',
-'$license', '$odo_intake', '$odo_return', '$description',
-'$date_author','$date_complete','$date_return', '$parts_a',
-'$parts_b', '$shop_a', '$shop_b', '$labour_a', '$labour_b', '$fee_a',
-'$fee_b', '$est_cost','$total_cost')";
+teacher_last_name, model, make, year, vin_num, license_plate,
+odometer_intake, odometer_return, detailed_desc, authorization_date,
+completed_date, vehicle_return_date, parts_ppu, parts_total,
+shop_supplies_ppu, shop_supplies_total,labour_ppu, labour_total,
+recycle_disposal_ppu, recycle_disposal_total,
+estimate_authorized_cost, total_cost, last_name, first_name, phone,
+address, email, invoice_num, invoice_date, parts_removed)VALUES
+('$workorder','$teacher_first', '$teacher_last', '$model', '$make',
+'$year',  '$vin', '$license', '$odo_intake', '$odo_return',
+'$description', '$date_author','$date_complete','$date_return',
+'$parts_a', '$parts_b', '$shop_a', '$shop_b', '$labour_a',
+'$labour_b', '$fee_a', '$fee_b', '$est_cost','$total_cost',
+'$last_name', '$first_name', '$phone', '$address', '$email',
+'$invoice_num', '$invoice_date', '$removed')";
    if($conn->query($sql)==TRUE){
 
    }else{
      echo "Error ".$sql."<br>".$conn->error;
    }
-$conn->close();
+$conn->close();*/
 ?>
 <a href="index.html">Return to home?</a>
 <?php
@@ -248,4 +273,3 @@ $conn->close();
 ?>
   </body>
 </html>
-
