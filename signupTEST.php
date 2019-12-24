@@ -1,0 +1,166 @@
+<html>
+<head>
+  
+    <link href="login.css" rel="stylesheet" type="text/css"/>
+    <link href="sign_up.cs[NOT IN USE]" rel="stylesheet" type="text/css" />
+  
+  
+  
+
+    
+  
+  <style>
+    
+    .block {
+  width: 25%;
+  height: 6%;
+  float: left;
+  padding: 2%;
+  }
+    
+    td {
+    padding: 20px 5px 0px 5px;
+    bottom: 0px;
+    }
+   
+    tr{
+    width: 2vw;
+    height: 2vw;
+      bottom: 0px;
+    }
+    
+    .center {
+      text-align: center;
+    }
+    
+    .box {
+  padding: 2.25vw, 1vw;
+  background-color: white;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  float: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3), 0 6px 20px 0 rgba(0,0,0,0.3);
+}
+    h1 {
+    margin-top: 2vw;
+    }
+    
+    .textbox{
+    
+    font-size: 18px;
+    width: 100%;
+      
+    }
+    
+    
+  </style>
+
+</head>
+<script src="include.js"></script>
+<body style="overflow-x: hidden;">
+  
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  
+   <div class= "topnav"><a href="index.html"><img src="logo.png" style="height: 28px; margin: 7px;"></a></div>
+
+  
+  
+            <div class="box"><center><h1 style="padding:0px;">S I G N &nbsp&nbspU P</h1></center>
+
+        
+              </br>
+ 
+  
+    
+    <table class="position_Center" style="padding-top:1.7vw; background-color:rgba(0,0,0,0.0); width:100%">
+      
+
+      
+      
+      <tr>
+        <td colspan="3">First name:</br>
+        <input type="text" name="first_name" class="textbox" value="" placeholder="Mike"></br></td>
+  
+        <td colspan="3">Last name:</br>
+        <input type="text" name="last_name"  class="textbox" value="" placeholder="Wazowski"></br></td>
+        
+      </tr>
+
+
+
+      <tr>
+        <td colspan="3">Email Address:</br>
+        <input type="text" name="email" class="textbox" value="" placeholder="example@gmail.com"></br></td>
+
+        <td colspan="3"> Phone Number:</br>
+        <input type="text" name="phone" class="textbox" value="" placeholder="123-456-7890"></br></td>
+
+      </tr>
+
+
+
+
+
+      <tr>
+        <td colspan="2">Username:</br>
+      <input type="text" name="username" class="textbox" value="" placeholder="1994_C001Dud3"></br></td>
+
+        <td colspan="2">Password:</br>
+      <input type="password" name="password" class="textbox" value="" placeholder="123p"></br></td>
+
+        <td colspan="2">Confirm Password:</br>
+      <input type="password" name="re_password" class="textbox"></br></td>
+
+      </tr>
+      
+      <tr>
+      </tr>
+
+      <tr>
+        <td colspan="6"><div class="center"> <input type="submit" value="Submit"> </div></td>
+</tr>
+    </table>
+ 
+
+</div>
+
+</br></br></br></br></br>
+                                                                                
+
+
+    <div w3-include-html="footer2.html"></div>
+<script>
+    includeHTML();
+  
+  
+</script>
+
+</form>
+</body>
+</html>
+                                       
+                                
+
+
+
+<?php
+    
+if (isset($_POST) && is_array($_POST) && array_key_exists('email', $_POST)) { 
+  $email = $_POST["email"];
+    
+    if(strlen($email) == 0) {
+    echo "<script>alert('NO EMAIL PRESENT [THIS IS A TEST]');</script>";
+    }
+    else if (substr($email,0,1) == 'p' && substr($email,8,5) == '@pdsb') {
+        echo "<script>alert('WELCOME TEACHER [THIS IS A TEST]');</script>";
+    }
+    else if (substr($email,0,1) != 'p' && substr($email,6,5) == '@pdsb') {
+        echo "<script>alert('WELCOME STUDENT [THIS IS A TEST]');</script>";
+    }
+    else{
+        echo "<script>alert('WELCOME RANDOM PERSON [THIS IS A TEST]');</script>";
+    }
+    
+}
+?>  
