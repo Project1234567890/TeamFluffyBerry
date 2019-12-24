@@ -152,7 +152,6 @@
     
 if (isset($_POST) && is_array($_POST) && array_key_exists('email', $_POST)) { 
   $email = $_POST["email"];
-    echo 'hello! ' . $email;
     
     if(strlen($email) == 0) {
     echo "<script>alert('NO EMAIL PRESENT [THIS IS A TEST]');</script>";
