@@ -7,6 +7,35 @@
   
     <link href="login.css" rel="stylesheet" type="text/css"/>
     <link href="sign_up.cs[NOT IN USE]" rel="stylesheet" type="text/css" />
+  
+  
+  <?php
+
+
+    
+if (isset($_POST) && is_array($_POST) && array_key_exists('email', $_POST)) { 
+  $email = $_POST["email"];
+    echo 'hello! ' . $email;
+    
+    if(strlen($email) == 0) {
+    echo "<script>alert('NO EMAIL PRESENT [THIS IS A TEST]');</script>";
+    }
+    else if (substr($email,0,1) == 'p' && substr($email,8,5) == '@pdsb') {
+        echo "<script>alert('WELCOME TEACHER [THIS IS A TEST]');</script>";
+    }
+    else if (substr($email,0,1) != 'p' && substr($email,6,5) == '@pdsb') {
+        echo "<script>alert('WELCOME STUDENT [THIS IS A TEST]');</script>";
+    }
+    else{
+        echo "<script>alert('WELCOME RANDOM PERSON [THIS IS A TEST]');</script>";
+    }
+    
+
+}
+
+
+?>  
+
     
   
   <style>
@@ -141,30 +170,4 @@
 </html>
                                        
                                 
-<?php
-
-
-    
-if (isset($_POST) && is_array($_POST) && array_key_exists('email', $_POST)) { 
-  $email = $_POST["email"];
-    echo 'hello! ' . $email;
-    
-    if(strlen($email) == 0) {
-    echo "<script>alert('NO EMAIL PRESENT [THIS IS A TEST]');</script>";
-    }
-    else if (substr($email,0,1) == 'p' && substr($email,8,5) == '@pdsb') {
-        echo "<script>alert('WELCOME TEACHER [THIS IS A TEST]');</script>";
-    }
-    else if (substr($email,0,1) != 'p' && substr($email,6,5) == '@pdsb') {
-        echo "<script>alert('WELCOME STUDENT [THIS IS A TEST]');</script>";
-    }
-    else{
-        echo "<script>alert('WELCOME RANDOM PERSON [THIS IS A TEST]');</script>";
-    }
-    
-
-}
-
-
-?>  
 
