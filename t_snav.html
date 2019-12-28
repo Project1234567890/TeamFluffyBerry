@@ -1,0 +1,149 @@
+<html> 
+  
+  <style>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  margin-top: calc(20px + 4vw);
+  padding: 0;
+  width: 25%;
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  overflow: scroll;
+  border-right: 0.005vw solid lightgrey;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  
+}
+
+.bob {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+
+}
+
+li a.active {
+  background-color: #f2f7ff;
+  color: #0c367a;
+  border-radius: 20px 0px 0px 20px;
+  border-right: 1px solid #0c367a;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #f2f7ff;
+  color: #0c367a;
+  border-radius: 20px 0px 0px 20px;
+  border-right: 1px solid #0c367a;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+ 
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  //box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  padding: 5px;
+  z-index: 1;
+   margin-left: -120px;
+   border: 0.005vw solid lightgrey;
+}
+.noHover{
+    pointer-events: none;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+</style>
+
+
+
+<ul>
+<br>
+<li><a class="active" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+
+<div class="bob">
+  <div style="display: inline;" >Classes</div>
+  <div class="dropdown" style="display: inline; float: right;">
+  <span>⋮</span>
+  <div class="dropdown-content">
+  <p><a class="bob"href="manageclass.html"> Manage Classes</a></p>
+  </div>
+</div>
+  </div>
+
+<!-- 
+<?php $sql = "SELECT id, period FROM class";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        ?> 
+        <li><a style="margin-left: 2vw;" href="t_info.html"><?php echo $row["period"];?></a></li><?php
+    }
+} ?> 
+-->
+  <li><a style="margin-left: 2vw;" href="class.html">P1</a></li>
+  <li><a style="margin-left: 2vw;" href="addclass.html">+</a></li>
+
+<div class="bob">
+  
+  <div style="display: inline; " >Clients</div>
+  <div class="dropdown" style="display: inline; float: right;">
+  <span>⋮</span>
+  <div class="dropdown-content">
+  <p><a class="bob"href="manageclass.html"> Manage Clients</a></p>
+  </div>
+</div>
+  </div>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client nameee)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client nameee)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client nameee)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client nameee)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client nameee)</a></li>
+  <li><a style="margin-left: 2vw;" href="index.html">(Client nameee)</a></li>
+  <li><a class="noHover" href="index.html">&nbsp</a></li>
+  <li><a class="noHover" >&nbsp</a></li>
+  
+
+  <div><br><br></div>
+  </ul>
+
+
+</html>
