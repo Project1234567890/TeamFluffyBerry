@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: 'Bai Jamjuree';
+}
+
+
+.topbar {
+  width: calc(100% - 4vw);
+  padding: 2vw;
+  background-color: white;
+  border-bottom: 0.01vw solid rgb(189, 189, 189);
+  color: #0c367a;
+  position: fixed;
+ //box-shadow: 0vw 0.1vw 1vw rgba(0, 0, 0, 0.11);
+ z-index: 1;
+}
+
+.dropbtn {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+
+
+}
+.drop {
+  position: relative;
+  display: inline-block;
+ 
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  padding: 5px;
+  margin-left: -60px;
+  z-index: 1;
+   border: 0.005vw solid lightgrey;
+ text-decoration: none;
+}
+
+.drop-content a{
+text-decoration: none;
+display: block;
+color: #0c367a;
+text-align: left;
+}
+
+.drop-content a:hover{
+background-color: lightgrey;
+color: black;
+}
+
+.show {display: block;}
+
+.classlink{
+  text-decoration: none; color: black;
+}
+
+.classlink:hover{
+  background-color: #eeeeee;
+}
+
+.addclass input {
+
+border: none;
+outline: none;
+border-bottom: 0.01vw solid lightgrey;
+
+}
+
+.addclass .submit {
+
+border: none;
+outline: none;
+background-color: #0c367a;
+color: white;
+letter-spacing: 1px;
+padding: 8px;
+
+}
+
+.addclass .submit:hover {
+background-color: #bdd7ff;
+color: black;
+
+}
