@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="teacher.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree'
+rel='stylesheet'>
+
+  </head>
+  <body>
+    <script src="include.js"></script>
+    <script src="teacher.js"></script>
+    
+ <div w3-include-html="t_tnav.html"></div>
+    
+    <div w3-include-html="t_snav.html"></div>
+    
+<div style="margin-left: 25%; padding: 2%; border-left: 0.1vw solid lightgrey;">
+   <div style="padding-top: 2vw; padding-bottom: 2vw; "> 
+<div style=" display: inline;">Bell</div>
+   </div>
+  
+  <div style="background: white; padding: 2vw; border: 0.1vw solid lightgrey;">
+  
+<!--
+<?php
+// define variables and set to empty values
+$st_fname = $st_lname = $st_email = $st_password = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $st_fname = test_input(isset($_POST["st_fname"]));
+  $st_lname = test_input(isset($_POST["st_lname"]));
+  $st_email = test_input(isset($_POST["st_email"]));
+  $st_password = test_input(isset($_POST["st_password"]));
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+  -->
+<h2>PHP Form Validation Example</h2>
+<form  class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  Add Student: <br> 
+<table>
+        <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>E-mail</td>
+        <td>Password</td>
+        </tr>
+            <tr>
+   <td><input style="border: 0.1vw solid lightgrey;" type="text" name="st_fname"></td>
+    <td><input style="border: 0.1vw solid lightgrey;" type="text" name="st_lname"></td>
+    <td><input style="border: 0.1vw solid lightgrey;" type="text" name="st_email"></td>
+    <td><input style="border: 0.1vw solid lightgrey;" type="text" name="st_password"></td> 
+    </tr>
+</table>
+<br><br>
+  <input  class="submit" type="submit" name="add" value="ADD STUDENT"><br><br>
+</form>
+
+<!--
+<?php
+
+session_start();
+
+$class = $_SESSION["class"]
+
+session_unset();
+
+
+$sql = "INSERT INTO $class (firstname, lastname, email, password)
+VALUES ("$st_fname", "$st_lname", "$st_email", "$st_password")";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New student added!";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
+
+$sql = "SELECT id, firstname, lastname, email, password FROM $class";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { ?>
+
+        <table>
+        <tr>
+        <td>&nbsp</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>E-mail</td>
+        <td>Password</td>
+        </tr>
+        <tr>
+        <td><?php $row["id"] ?></td>
+        <td><?php $row["firstname"] ?></td>
+        <td><?php $row["lastname"] ?></td>
+        <td><?php $row["email"] ?></td>
+        <td><?php $row["password"] ?></td>
+        </tr>
+        </table>
+
+ <?php   }
+} else {
+    echo "What's a class without students... Add some!";
+}
+$conn->close();
+
+?>
+-->
+
+<div  class="addclass">  
+  <a  href="class.html"><button style= "margin-left: calc(100% - 50px);" class="submit" type="submit" name="next">NEXT</button>
+</div>
+
+  </div>
+  
+  </div>
+  
+
+<div1 w3-include-html="footer.html"></div1>
+    <script>
+includeHTML();
+</script>
+    
+</body>
