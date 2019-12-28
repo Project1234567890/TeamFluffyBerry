@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="teacher.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree'
+rel='stylesheet'>
+
+  </head>
+  <body>
+    <script src="include.js"></script>
+    <script src="teacher.js"></script>
+    
+ <div w3-include-html="t_tnav.html"></div>
+    
+    <div w3-include-html="t_snav.html"></div>
+    
+<div style="margin-left: 25%; padding: 2%; border-left: 0.1vw solid lightgrey;">
+   <div style="padding-top: 2vw; padding-bottom: 2vw; "> 
+<div style=" display: inline;">Bell</div>
+   </div>
+  
+<div style="background: white; padding: 2vw; border: 0.1vw solid lightgrey;">
+  
+<center><h2>Class Name</h2></center>
+
+CLASS UPDATES
+<br></br>
+ <!-- 
+<?php   
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $update = test_input($_POST["update"]);
+);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+} 
+session_start();
+
+$a = $_SESSION[i];
+$a .= $_SESSION[class];
+
+$_SESSION["class_update"] = $a;
+
+$sql = "SELECT id, date, update, client FROM $a";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+?>-->
+<form  class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<div class="classlink" style="margin-top: 0.5vw; border: 0.1vw solid #0c367a; min-width: 96%; padding: 2%; display:inline-block" ><input style="border:none; background: none;"type="button" value="DD/MM/YYYY" name="update">
+ <div style="float: right">To: Client</div>
+  </div></form>
+
+<!--
+<?php
+
+       
+    }
+} else {
+    echo "No Updates Yet...";
+}
+$conn->close();
+
+?>
+  -->
+
+<br></br><br></br>
+
+STUDENTS
+<br></br>
+
+<a href="t_student.html" class="classlink"><div style="margin-top: 0.5vw; border: 0.1vw solid lightgrey; min-width: 96%; padding: 2%; display:inline-block">
+ (Student Name)
+ <div style="float: right">number@pdsb.net</div>
+  </div></a>
+  <a href="t_student.html" class="classlink"><div style="margin-top: 0.5vw; border: 0.1vw solid lightgrey; min-width: 96%; padding: 2%; display:inline-block">
+ (Student Name)
+ <div style="float: right">number@pdsb.net</div>
+  </div></a>
+
+  </div>
+  
+
+
+  </div>
+  
+
+
+<div1 w3-include-html="footer.html"></div1>
+    <script>
+includeHTML();
+</script>
+    
+</body>
+</html>
