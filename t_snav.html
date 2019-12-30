@@ -8,7 +8,7 @@
   padding: 0;
   width: 25%;
   background-color: white;
-  position: absolute;
+  position: fixed;
   height: 100%;
   overflow: scroll;
   border-right: 0.005vw solid lightgrey;
@@ -75,32 +75,41 @@ li a:hover:not(.active) {
 <ul>
 <br>
 <li><a class="active" href="index.html"><i class="fa fa-home"></i> Home</a></li>
-  <li><a href="t_info.html"> Info</a></li>
-<li><a href="t_assign.html"> Assign</a></li>
-<li><a href="t_manage.html"> Manage</a></li>
 
 <div class="bob">
   <div style="display: inline;" >Classes</div>
   <div class="dropdown" style="display: inline; float: right;">
   <span>⋮</span>
   <div class="dropdown-content">
-  <p><a class="bob"href="manageclass.html"> Manage Classes</a></p>
+  <p><a class="bob"href="manageclass.html">Manage Classes</a></p>
   </div>
 </div>
   </div>
+<!-- <?php  
+session_start();
 
-<!-- 
-<?php $sql = "SELECT id, period FROM class";
+$sql = "SELECT id, teacher, class FROM student";
+
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-    // output data of each row
     while($row = $result->fetch_assoc()) {
-        ?> 
-        <li><a style="margin-left: 2vw;" href="t_info.html"><?php echo $row["period"];?></a></li><?php
+       if($row["teacher"] == $_SESSION["email"]){ ?>-->
+       <li><a style="margin-left: 2vw;"><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+          <input class="btnunset" type="button" name="class<?php echo $row['id'] ?>" value="<?php echo $row['class'] ?>">
+          </form></a></li>
+        <!--<?php
+if(isset($_POST["class$row['id']"]) == TRUE){
+  session_start();
+  $_SESSION["class"] = $row['class'];
+}
+
+       }
     }
-} ?> 
--->
-  <li><a style="margin-left: 2vw;" href="class.html">P1</a></li>
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>-->
   <li><a style="margin-left: 2vw;" href="addclass.html">+</a></li>
 
 <div class="bob">
@@ -109,13 +118,40 @@ if ($result->num_rows > 0) {
   <div class="dropdown" style="display: inline; float: right;">
   <span>⋮</span>
   <div class="dropdown-content">
-  <p><a class="bob"href="manageclass.html"> Manage Clients</a></p>
+  <p><a class="bob"href="manageclient.html"> Manage Clients</a></p>
   </div>
 </div>
   </div>
-  <li><a style="margin-left: 2vw;" href="index.html">(Client name)</a></li>
+<!-- <?php  
+session_start();
+
+$sql = "SELECT teacher, firstname, lastname FROM client";
+
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+       if($row["teacher"] == $_SESSION["email"]){ ?>-->
+       <li><a style="margin-left: 2vw;" ><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+          <input class="btnunset" type="button" name="client<?php echo $row['id'] ?>" value="<?php echo $row['firstname']." ".$row['lastname'] ?>">
+          </form></a></li>
+        <!--<?php
+        session_start();
+if(isset($_POST["client$row['id']"]) == TRUE){
+  session_start();
+  $_SESSION["id"] = $row['id'];
+}
+       }
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>-->
+ 
+
+  <!-- following code is important please leave it be-->
   <li><a class="noHover" href="index.html">&nbsp</a></li>
-  <li><a class="noHover" >&nbsp</a></li> 
+  <li><a class="noHover" >&nbsp</a></li>
   
 
   <div><br><br></div>
