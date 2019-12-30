@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,41 +29,28 @@ rel='stylesheet'>
 CLASS UPDATES
 <br></br>
  <!-- 
-<?php   
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $update = test_input($_POST["update"]);
-);
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-} 
-session_start();
-
-$a = $_SESSION[i];
-$a .= $_SESSION[class];
-
-$_SESSION["class_update"] = $a;
-
-$sql = "SELECT id, date, update, client FROM $a";
+<?php   session_start();
+$sql = "SELECT id, class, timestamp, teacher, client_first_name, client_last_name FROM FORM_D";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-
+if($row["teacher"] == $_SESSION["email"] && $row["class"] == $_SESSION["class"])
 ?>-->
-<form  class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-<div class="classlink" style="margin-top: 0.5vw; border: 0.1vw solid #0c367a; min-width: 96%; padding: 2%; display:inline-block" ><input style="border:none; background: none;"type="button" value="DD/MM/YYYY" name="update">
- <div style="float: right">To: Client</div>
-  </div></form>
-
-<!--
+<br></br>
+<form class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<button class="btnunset" name="<?php echo $row['id'] ?>"><a class="classlink"><div style="margin-top: 0.5vw; border: 0.1vw solid lightgrey; min-width: 96%; padding: 2%; display:inline-block">
+ <?php $row["timestamp"]?>&nbsp
+ <div style="float: right">To:&nbsp<?php $row["client_first_name"]." ".$row["client_last_name"] ?></div>
+  </div></a></button></form>
+ <!--
 <?php
-
+if(isset($_POST["$row['id']"]) == TRUE){
+  session_start();
+  $_SESSION["update_id"] = $row['id'];
+  header('Location: t_update.html');
+}
        
     }
 } else {
@@ -77,16 +64,39 @@ $conn->close();
 <br></br><br></br>
 
 STUDENTS
+<!-- 
+<?php   session_start();
+$sql = "SELECT id, email, first_name, last_name, teacher, class FROM student";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+if($row["teacher"] == $_SESSION["email"] && $row["class"] == $_SESSION["class"])
+?>-->
 <br></br>
+<form class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<button class="btnunset" name="<?php echo $row['email'] ?>"><a class="classlink"><div style="margin-top: 0.5vw; border: 0.1vw solid lightgrey; min-width: 96%; padding: 2%; display:inline-block">
+ <?php $row['first_name']." ".$row['last_name'] ?>
+ <div style="float: right"><?php $row['email'] ?></div>
+  </div></a></button></form>
+ <!--
+<?php
+if(isset($_POST["$row['email']"]) == TRUE){
+  session_start();
+  $_SESSION["student"] = $row['email'];
+  header('Location: t_student.html');
+  //please end me wtf am i doing
+}
+       
+    }
+} else {
+    echo "No Students... Add Some?";
+}
+$conn->close();
 
-<a href="t_student.html" class="classlink"><div style="margin-top: 0.5vw; border: 0.1vw solid lightgrey; min-width: 96%; padding: 2%; display:inline-block">
- (Student Name)
- <div style="float: right">number@pdsb.net</div>
-  </div></a>
-  <a href="t_student.html" class="classlink"><div style="margin-top: 0.5vw; border: 0.1vw solid lightgrey; min-width: 96%; padding: 2%; display:inline-block">
- (Student Name)
- <div style="float: right">number@pdsb.net</div>
-  </div></a>
+?>
+  -->
 
   </div>
   
@@ -96,6 +106,7 @@ STUDENTS
   
 
 
+<div1 w3-include-html="footer.html"></div1>
     <script>
 includeHTML();
 </script>
