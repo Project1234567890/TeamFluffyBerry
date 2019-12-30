@@ -26,7 +26,6 @@ rel='stylesheet'>
   
 <!--
 <?php
-// define variables and set to empty values
 $classname = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -41,7 +40,7 @@ function test_input($data) {
 }
 ?>
   -->
-<h2>PHP Form Validation Example</h2>
+
 <form  class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Class Name: <br> <input type="text" name="classname">
   <br><br>
@@ -55,12 +54,6 @@ if(isset($_POST['next']) == TRUE){
 session_start();
 
 $_SESSION["class"] = $classname;
-
-if ($conn->query($sql) === TRUE) {
-  echo "Table MyGuests created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
 
 $conn->close();
 
