@@ -65,6 +65,7 @@ li a:hover:not(.active) {
 <ul>
 <br>
 <li><a class="active" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+<li><a href="index.html"> Information</a></li>
 <div class="bob">
   <div style="display: inline;" >Classes</div>
   <div class="dropdown" style="display: inline; float: right;">
@@ -86,7 +87,7 @@ if ($result->num_rows > 0) {
           </form></a></li>
         <!--<?php
 if(isset($_POST["class$row['id']"]) == TRUE){
-  session_start();
+  session_start();-
   $_SESSION["class"] = $row['class'];
 }
        }
