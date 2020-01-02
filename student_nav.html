@@ -1,0 +1,193 @@
+<html>
+<body>
+
+
+<div class="topbar"> 
+
+<div style="display: inline-block; width: calc(33% - 1vw);">
+
+  <div>  
+<div class="drop"><img src="blackstamp.gif" style="height: 40px; margin-top: -1vw; margin-bottom: -01vw">
+  <div class="drop-content" style=" margin-left: -10px;">
+  <a href="">Schedule</a>
+  </div>&nbsp
+</div><!--<img src="bluelogo.png" style="height: 23px; margin-top: -1vw; margin-bottom: -0.5vw">--></div>
+</div>
+<div style="display: inline-block; width: 33.333%;">
+  <div  style="text-align: center; margin-top: -1vw; margin-bottom: -0.5vw;">
+
+<div class="drop">
+  <!--
+<?php
+$check = 0;
+$count = 0;
+  $sql = "SELECT id, client_first_name, client_last_name, teacher_email FROM FORM_A and FORM_B, FORM_C, FORM_D";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      if(($row["teacher_email"] == $_SESSION["email"]) && ($row["t_seen"] == 0)){
+$check = 1;
+$count++;
+   }
+  }
+}
+if($check == 1){ ?> -->
+ <div class="notif">
+ <span><i class="fa fa-bell" style="font-size:24px "></i></span>
+ <span class ="badge"><!-- <?php echo $count ?> --></span>
+ </div>
+
+<!--<?php }
+elseif($check == 0){ ?> 
+  
+ <i class="fa fa-bell" style="font-size:24px"></i>
+<?php }
+$conn->close();
+?>
+-->
+  <div class="drop-content">
+    <!-- 
+<?php
+session_start();
+$sql = "SELECT id, client_first_name, client_last_name, teacher_email FROM FORM_C";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      if(($row["teacher_email"] == $_SESSION["email"]) &&($row["t_seen"] == 0)){
+?>
+      -->
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <button class="btnunset" name="formc<?php echo $row["id"] ?>"><a>Client Request by: <!-- <?php echo $row["client_first_name"]." ".$row["client_last_name"]; ?> -->
+    </a></button></form>
+<!--    
+  if(isset($_POST["formc$row["id"]") == TRUE){
+    //sessions??
+    $sql = "UPDATE FORM_C SET t_seen=1 id=2";
+    header('location: t_update.php');
+   }
+}
+$conn->close();
+?>
+-->
+
+<!-- 
+<?php
+$sql = "SELECT id, client_first_name, client_last_name, teacher_email FROM FORM_A";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      if(($row["teacher_email"] == $_SESSION["email"]) &&($row["t_seen"] == 0)){
+?>
+      -->
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <button class="btnunset" name="forma<?php echo $row["id"] ?>"><a>Document edited by: <!-- <?php echo $row["client_first_name"]." ".$row["client_last_name"]; ?> -->
+    </a></button></form>
+
+<!--   
+if(isset($_POST["forma$row["id"]") == TRUE){
+    //sessions??
+    header('location: t_update.php');
+  
+  }
+   }
+    
+}
+$conn->close();
+?>
+-->
+
+  <!-- 
+<?php
+$sql = "SELECT id, client_first_name, client_last_name, teacher_email FROM FORM_B";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      if(($row["teacher_email"] == $_SESSION["email"]) &&($row["t_seen"] == 0)){
+?>
+      -->
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <button class="btnunset" name="formb<?php echo $row["id"] ?>"><a>Document edited by: <!-- <?php echo $row["client_first_name"]." ".$row["client_last_name"]; ?> -->
+    </a></button></form>
+<!--     
+   
+  if(isset($_POST["formb$row["id"]") == TRUE){
+    //sessions??
+    header('location: t_update.php');
+  }
+    }
+    
+}
+$conn->close();
+?>
+-->
+
+    <!-- 
+<?php
+$sql = "SELECT id, name, lastname, section, timestamp FROM FORM_D";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      if($row["t_seen"] == 0){
+?>
+      -->
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <button class="btnunset" name="formd<?php echo $row["id"] ?>"><a>UPDATE<div style="float:right;"><!--<?php echo $row["timestamp"] ?>--></div><br>
+    From: <!--<?php echo $row["name"] ?>--> <div style="float:right;"><!--<?php echo $row["client_name"] ?>--></div>
+    </a></button></form>
+<!--    
+  
+  if(isset($_POST["formd$row["id"]") == TRUE){
+    //sessions??
+    header('location: t_update.php');
+  }
+  
+  }
+     }
+    
+<!-- <?php
+}
+$conn->close();
+?>
+-->
+  </div>
+</div>
+
+    </div>
+</div>
+<div style="display: inline-block; width: calc(33% - 1vw);">
+  <div style="text-align: right;">
+  
+<div class="drop">
+   <!-- 
+<?php
+$sql = "SELECT id, firstname, lastname, email FROM teacher";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      if($row["t_seen"] == 0){
+        echo $row["firstname"]." ".$row["lastname"];
+  }
+  
+  }
+     }
+    
+<!-- <?php
+}
+$conn->close();
+?>
+-->
+code above^
+  <div class="drop-content">
+  <a href="settings.html">Settings</a>
+  <a href="">Logout</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+   </div>
+
+
+</body>
+</html>
