@@ -69,14 +69,15 @@ li a:hover:not(.active) {
   
   
   
-  
-<div class="bob">
+  <!-- the list of projects that the student needs to complete (ex. windshield repair, oil change, etc.). the student cannot edit this. -->
+<!-- if this snippit of code is unnessary, feel free to get rid of it. Just get rid of the comments as well -->
+  <div class="bob">
   <div style="display: inline;" >Projects</div>
   <div class="dropdown" style="display: inline; float: right;">
 </div>
   </div>
        <li><a style="margin-left: 2vw;"><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-          <input class="btnunset" type="button" name="class<?php echo $row['id'] ?>" value="<?php echo $row['class'] ?>">
+          <input class="btnunset" type="button" name="class<?php echo $row['id'] ?>" value="<?php echo $row['projects'] ?>">
           </form></a></li>
 
   
@@ -84,7 +85,6 @@ li a:hover:not(.active) {
   
   
   
-  <li><a style="margin-left: 2vw;" href="addclass.html">+</a></li>
 <div class="bob">
   
   <div style="display: inline; " >Clients</div>
