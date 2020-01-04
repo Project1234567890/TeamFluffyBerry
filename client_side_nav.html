@@ -69,25 +69,7 @@ li a:hover:not(.active) {
   
   
   
-  <!-- the list of projects that the student needs to complete (ex. windshield repair, oil change, etc.). the student cannot edit this. -->
-<!-- if this snippit of code is unnessary, feel free to get rid of it. Just get rid of the comments as well -->
-  <div class="bob">
-  <div style="display: inline;" >Projects</div>
-    
-    
-  </div>
-       <li><a style="margin-left: 2vw;"><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-          <input class="btnunset" type="button" name="class<?php echo $row['id'] ?>" value="<?php echo $row['projects'] ?>">
-          </form></a>
-  
-    <div class="dropdown" style="display: inline; float: right;">
-  <span>⋮</span>
-  <div class="dropdown-content">
-  <p><a class="bob"href="manageclient.html"> Mark as Done</a></p>
-</div>
-</div>
-  
-  </li>
+ 
   
   
   
