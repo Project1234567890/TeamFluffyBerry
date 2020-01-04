@@ -73,7 +73,13 @@ li a:hover:not(.active) {
 <!-- if this snippit of code is unnessary, feel free to get rid of it. Just get rid of the comments as well -->
   <div class="bob">
   <div style="display: inline;" >Projects</div>
+    
   <div class="dropdown" style="display: inline; float: right;">
+  <span>⋮</span>
+  <div class="dropdown-content">
+  <p><a class="bob"href="manageclient.html"> Mark as Done</a></p>
+
+</div>
 </div>
   </div>
        <li><a style="margin-left: 2vw;"><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
@@ -85,26 +91,7 @@ li a:hover:not(.active) {
   
   
   
-<div class="bob">
-  
-  <div style="display: inline; " >Clients</div>
-  <div class="dropdown" style="display: inline; float: right;">
-  <span>⋮</span>
-  <div class="dropdown-content">
-  <p><a class="bob"href="manageclient.html"> Manage Clients</a></p>
-  </div>
-</div>
-  </div>
 
-  
-  
-  
-  
-  
-  
-       <li><a style="margin-left: 2vw;" ><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-          <input class="btnunset" type="button" name="client<?php echo $row['id'] ?>" value="<?php echo $row['firstname']." ".$row['lastname'] ?>">
-          </form></a></li>
 
   
   
