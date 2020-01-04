@@ -74,17 +74,21 @@ li a:hover:not(.active) {
   <div class="bob">
   <div style="display: inline;" >Projects</div>
     
-  <div class="dropdown" style="display: inline; float: right;">
-  <span>⋮</span>
-  <div class="dropdown-content">
-  <p><a class="bob"href="manageclient.html"> Mark as Done</a></p>
 
-</div>
-</div>
+    
   </div>
        <li><a style="margin-left: 2vw;"><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
           <input class="btnunset" type="button" name="class<?php echo $row['id'] ?>" value="<?php echo $row['projects'] ?>">
-          </form></a></li>
+          </form></a>
+  
+    <div class="dropdown" style="display: inline; float: right;">
+  <span>⋮</span>
+  <div class="dropdown-content">
+  <p><a class="bob"href="manageclient.html"> Mark as Done</a></p>
+</div>
+</div>
+  
+  </li>
 
   
   
