@@ -66,20 +66,15 @@ li a:hover:not(.active) {
 <br>
 <li><a class="active" href="index.html"><i class="fa fa-home"></i> Home</a></li>
   <li><a href="index.html"> Information</a></li>
+  
+  
+  
+  
 <div class="bob">
-  <div style="display: inline;" >Classes</div>
+  <div style="display: inline;" >Projects</div>
   <div class="dropdown" style="display: inline; float: right;">
-  <span>⋮</span>
-  <div class="dropdown-content">
-  <p><a class="bob"href="manageclass.html">Manage Classes</a></p>
-  </div>
 </div>
   </div>
-
-  
-  
-  
-  
        <li><a style="margin-left: 2vw;"><form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
           <input class="btnunset" type="button" name="class<?php echo $row['id'] ?>" value="<?php echo $row['class'] ?>">
           </form></a></li>
