@@ -1,22 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MotorMaster</title>
-    <link href="page.css" rel="stylesheet" type="text/css" />
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="teacher.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree'
+rel='stylesheet'>
+
   </head>
   <body>
     <script src="include.js"></script>
-    <script src="home.js"></script>
-      
-    <div w3-include-html="c_nav.html"></div>
+    <script src="teacher.js"></script>
     
- <h1 class="anim">Welcome (Client)!</h1>
-<p>Please end me :(. Terms and Conditions and Contacts will be in the Footer</p>
+    
+    <!–– the nav at the top-->
+ <div w3-include-html="student_banner_nav.html"></div>
+    
+    
+    
+        <!––the nav on the left-->
+    <div w3-include-html="student_side_nav.html"></div>
+    
+    
+    
+<div style="margin-left: 25%; padding: 2%; border-left: 0.1vw solid lightgrey;">
+   <div style="padding-top: 2vw; padding-bottom: 2vw; "> 
+<div style=" display: inline;">Bell</div>
+   </div>
+  
+  <div style="background: white; padding: 2vw; border: 0.1vw solid lightgrey;">
+  <br>
 
+    
+    <center>
+<div style="display: inline-block; width: calc(33% - 1vw);"></div>
+<div style="display: inline-block; width: calc(33% - 1vw);">
+   <p>YOUR DAILY UPDATES</p>
+</div>
+      
+<div style="display: inline-block; width: calc(33% - 1vw);">
+  <!-- commented out as i want to decide which "Mark as Done" button is better-->
+  <!--<form class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER[" php_self"]);?="">"&gt;  
+<button class="btnunset" style="background-color:#ededed; width: inherit; border: 2px solid gray; border-radius; 20px;" name="<?php echo $row['id'] ?>"> 
+  <p>Mark as Done</p>
+  </button></form> --></div></center>
+    
+<br></br>
+<br></br>
+    
+<form class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<button class="btnunset" name="<?php echo $row['id'] ?>"><a class="classlink"><div style="margin-top: 0.5vw; border: 0.1vw solid lightgrey; min-width: 96%; padding: 2%; display:inline-block">
+ <?php $row["timestamp"]?>&nbsp
+ <div style="float: right">To:&nbsp<?php $row["teacher"] ?></div>
+  </div></a></button></form>
+ 
 
+  </div>
+  
+  </div>
+  
+
+<div1 w3-include-html="footer.html"></div1>
     <script>
 includeHTML();
 </script>
     
-  </body>
+</body>
 </html>
