@@ -31,15 +31,19 @@ rel='stylesheet'>
   
   <div style="background: white; padding: 2vw; border: 0.1vw solid lightgrey;">
   <br>
-<center>YOUR DAILY UPDATES</center>
+
     
-    
-    
-    <form class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-<button class="btnunset" name="<?php echo $row['id'] ?>"><a class="classlink"><div style="margin-top: 0.5vw; border: 0.1vw solid lightgrey; min-width: 96%; padding: 2%; display:inline-block">
- <?php $row["timestamp"]?>&nbsp
- <div style="float: right">To:&nbsp<?php $row["client_first_name"]." ".$row["client_last_name"] ?></div>
-  </div></a></button></form>
+    <center>
+<div style="display: inline-block; width: calc(33% - 1vw);"></div>
+<div style="display: inline-block; width: calc(33% - 1vw);">
+   <p>YOUR DAILY UPDATES</p>
+</div>
+      
+<div style="display: inline-block; width: calc(33% - 1vw);">
+  <form class="addclass" method="post" action="<?php echo htmlspecialchars($_SERVER[" php_self"]);?="">"&gt;  
+<button class="btnunset" style="background-color:#32a852; width: inherit; border: 2px solid gray; border-radius; 20px;" name="<?php echo $row['id'] ?>"> 
+  <p>Mark as Done</p>
+  </button></form> </div></center>
     
     
     
