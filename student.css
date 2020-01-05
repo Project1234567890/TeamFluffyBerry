@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: 'Bai Jamjuree';
+}
+
+
+.topbar {
+  width: calc(100% - 4vw);
+  padding: 2vw;
+  background-color: white;
+  border-bottom: 0.01vw solid rgb(189, 189, 189);
+  color: #0c367a;
+  position: fixed;
+ z-index: 1;
+}
+
+
+.drop {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  padding: 0px;
+  margin-left: -70px;
+  z-index: 1;
+  border: 0.005vw solid #0c367a;
+ text-decoration: none;
+}
+
+.drop-content a{
+text-decoration: none;
+display: block;
+color: #0c367a;
+text-align: left;
+padding: 20px;
+}
+
+.drop-content a:hover{
+background-color: #e7edf8;
+color: black;
+//border-left: 0.005vw solid #0c367a;
+}
+
+.drop-content:hover{
+display: block;
+}
+
+.drop:hover .drop-content{
+display: block;
+}
+
+.classlink{
+  text-decoration: none; color: black;
+}
+
+.classlink:hover{
+  background-color: #eeeeee;
+}
+
+.form {
+
+display: inline-block;
+  margin-left: 25%;
+  margin-right: 25%;
+
+}
+
+.form input {
+
+border: none;
+outline: none;
+border-bottom: 0.01vw solid lightgrey;
+
+}
+
+.form .submit {
+
+border: none;
+outline: none;
+background-color: #0c367a;
+color: white;
+letter-spacing: 1px;
+padding: 8px;
+}
+
+.form .submit:hover {
+background-color: #bdd7ff;
+color: black;
+
+}
+
+.notif .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+}
+
+.btnunset {
+  background: none;
+	color: inherit; 
+  border: none; 
+  padding: 0px; 
+  font: inherit; 
+  cursor: pointer; 
+  outline: inherit; 
+  width: 100%;
+  text-align: left;
+}
+
