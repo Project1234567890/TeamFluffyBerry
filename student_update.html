@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home: Update</title>
+  <link href="student.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree'
+rel='stylesheet'>
+
+  </head>
+  <body>
+    <script src="include.js"></script>
+    
+ <div w3-include-html="s_tnav.html"></div>
+    
+    
+<div style="padding: 2%;">
+   <div style="padding-top: 2vw; padding-bottom: 2vw; "> 
+<div style=" display: inline;">Bell</div>
+   </div>
+  
+  <div style="background: white; padding: 2vw; padding-bottom: 4vw; border: 0.1vw solid lightgrey;">
+  <br>
+
+<!-- 
+<?php   
+session_start();
+
+//sessions for both students and teachers (assuming this is gonna be the only page for students - or we use GET)
+
+$sql = "SELECT id, class, timestamp, teacher, student FROM FORM_D WHERE teacher = $_SEESION['email']";
+$result = $conn->query($sql);
+
+//'student' is student email - we check this so the student can only submit ONCE daily and not again. 
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+if($row["student"] == $_SESSION["std_email"]){
+?>-->
+<center style="color: red;">Looks like you already updated! Tomorrow, my friend.</center>
+ <!-- <?php
+ } else { 
+   ?> -->
+
+<h3 style="margin-top: -0.5vw;"><center>TIME FOR YOUR DAILY UPDATE!</center></h3><br>
+
+<!--<?php
+
+  $client = $_POST["client"];
+  $names = $_POST["names"];
+  $section = $_POST["section"];
+  $complete = $_POST["complete"];
+  $incomplete = $_POST["incomplete"];
+
+
+?>-->
+<form class="form" method="post" onsubmit="return confirm('ONCE YOU SUBMIT, YOU CANNOT SUBMIT AGAIN TODAY!')" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  Client: <br><input type="text" name="name">
+  <br><br>
+  Name(s): <br><input type="text" name="name">
+  <br><br>
+  Section: <br><input type="text" name="email">
+  <br><br>
+  What's Complete: <br><textarea style="border: 0.5px solid #e0e0e0; outline: none;" name="complete" rows="5" cols="90"></textarea>
+  <br><br>
+  What's Incomplete: <br><textarea style="border: 0.5px solid #e0e0e0; outline: none;" name="incomplete" rows="5" cols="90"></textarea>
+  <br><br>
+  <input class="submit" type="submit" name="submit" value="SUBMIT">  
+</form>
+
+<!--<?php
+
+if(isset($_POST['submit'])){
+    //insert info into FORM_D
+}
+}
+}
+} 
+$conn->close();
+?>-->
+
+  </div>
+
+  </div>
+  
+
+    <script>
+includeHTML();
+</script>
+    
+</body>
